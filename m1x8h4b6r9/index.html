@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Boonus 6 — Tugevda oma enesekindlust</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+@page { size:210mm 297mm; margin:0; }
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+:root { --lav:#D9C9F7;--lavd:#B89FE0;--pink:#F3B8D2;--gold:#C9A84C;--title:#4E4036;--body:#6F6258;--body2:#8A7A70;--ft:'Playfair Display',serif;--fb:'Inter',sans-serif; }
+body { font-family:var(--fb); color:var(--body); background:#FFF8F4; }
+.page { width:210mm; min-height:297mm; position:relative; page-break-after:always; overflow:hidden; display:flex; flex-direction:column; }
+.cover { background:linear-gradient(160deg,#D9C9F7 0%,#F3B8D2 50%,#FFF8F4 100%); align-items:center; justify-content:center; text-align:center; padding:40mm 20mm; }
+.cover-badge { font-size:9pt; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--lavd); background:rgba(255,255,255,.65); padding:5px 18px; border-radius:20px; display:inline-block; margin-bottom:20px; }
+.cover h1 { font-family:var(--ft); font-size:26pt; color:var(--title); line-height:1.2; margin-bottom:12px; }
+.cover p { font-size:12pt; color:var(--body); margin-bottom:24px; line-height:1.5; }
+.cover-pill { display:inline-block; background:var(--title); color:#fff; padding:7px 20px; border-radius:24px; font-size:9pt; font-weight:600; margin:3px; }
+.guide-page { background:#fff; padding:16mm 18mm; }
+.guide-h2 { font-family:var(--ft); font-size:18pt; color:var(--title); margin-bottom:5mm; }
+.guide-p { font-size:10pt; color:var(--body); line-height:1.65; margin-bottom:3mm; }
+.affirm-page { background:#fff; padding:10mm 14mm; }
+.affirm-grid { display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+.card { border-radius:14px; padding:9mm 10mm; display:flex; flex-direction:column; gap:3mm; min-height:58mm; align-items:center; justify-content:center; text-align:center; }
+.card-a { background:linear-gradient(135deg,#f9f4ff,#fef3f8); border:1.5px solid var(--lav); }
+.card-b { background:linear-gradient(135deg,#fff8e8,#fdf6ff); border:1.5px solid #e8d9a0; }
+.card-num { font-size:8pt; font-weight:700; letter-spacing:.1em; color:var(--lavd); text-transform:uppercase; }
+.card-affirm { font-family:var(--ft); font-size:12pt; color:var(--title); line-height:1.4; }
+.card-draw { font-size:8.5pt; color:var(--body2); font-style:italic; line-height:1.4; padding-top:3mm; border-top:1px dashed var(--lav); width:100%; }
+.guide-ul { list-style:none; display:flex; flex-direction:column; gap:2mm; margin:3mm 0; }
+.guide-ul li { font-size:10pt; color:var(--body); line-height:1.5; padding-left:14px; position:relative; }
+.guide-ul li::before { content:"✦"; position:absolute; left:0; color:var(--lavd); font-size:8pt; }
+@media print { .no-print { display:none!important; } }
+@media screen { body { background:#e0d8d0; padding:20px; } .page { margin:0 auto 20px; box-shadow:0 4px 20px rgba(0,0,0,.2); } .print-btn { position:fixed; bottom:24px; right:24px; background:var(--lavd); color:#fff; border:none; border-radius:50px; padding:14px 28px; font-size:14px; font-weight:700; cursor:pointer; z-index:1000; } }
+</style>
+</head>
+<body>
+<button class="print-btn no-print" onclick="window.print()">🖨️ Prindi / Salvesta PDF</button>
+<div class="page cover">
+  <div class="cover-badge">✨ Boonus 6 · Kunstiteraapia Käsiraamat</div>
+  <h1>Tugevda oma<br>enesekindlust</h1>
+  <p>40 kinnituse- ja joonistuskaarti enesekindluse ja sisemise jõu kasvatamiseks</p>
+  <div>
+    <span class="cover-pill">✨ 40 kaarti</span>
+    <span class="cover-pill">📖 Prinditav PDF</span>
+  </div>
+</div>
+<div class="page guide-page">
+  <h2 class="guide-h2">Kuidas kasutada kinnituste kaarte</h2>
+  <p class="guide-p">Iga kaart sisaldab kahte elementi: kinnituse (affirmation) — mis on positiivne väide iseendale — ja joonistusülesande, mis aitab kinnituse kehasse ja alateadvusse sügavamalt kanda.</p>
+  <p class="guide-p"><strong>Teaduslik taust:</strong> Uuringud näitavad, et positiivsete kinnituste korduv kasutamine koos visuaalse väljendusega võib muuta aju enesetaju mustrid. Koos loovuse aktiveerimisega on mõju tugevam.</p>
+  <ul class="guide-ul">
+    <li><strong>Hommikurutiin:</strong> Vali üks kaart ja joonista kinnitus enne tööpäeva algust</li>
+    <li><strong>Rasketes hetkedes:</strong> Leia kaart, mis kõnetab sinu hetkeolukorda</li>
+    <li><strong>Juhuslik valimine:</strong> Sulge silmad ja vali kaart intuitiivselt</li>
+    <li><strong>Nädalateema:</strong> Kasuta üht kaarti kogu nädala jooksul eri viisidel</li>
+  </ul>
+</div>
+<div id="container"></div>
+<script>
+var cards = [
+  {a:"Ma olen piisav täpselt sellisena, nagu olen.",d:"Joonista oma käed, mis hoiavad oma südant.",cls:"card-a"},
+  {a:"Iga päev avastan uued jõu allikad endas.",d:"Joonista allikas, mis voolab sinu seest.",cls:"card-b"},
+  {a:"Minu hääl on väärtuslik ja väärib ärakuulamist.",d:"Joonista sõna, mis sümboliseerib sinu häält.",cls:"card-a"},
+  {a:"Ma usaldan oma sisemist tarkust.",d:"Joonista täht, mis esindab sinu sisetarkust.",cls:"card-b"},
+  {a:"Olen võimeline ületama kõik takistused, mis ette tulevad.",d:"Joonista sild üle tormise jõe.",cls:"card-a"},
+  {a:"Olen uhke inimese üle, kelleks olen kasvanud.",d:"Joonista redel, mille iga pulk on üks sinu kasvusamm.",cls:"card-b"},
+  {a:"Minu areng on pidev ja loomulik protsess.",d:"Joonista puu, mis kasvab kõikides ilmastikuoludes.",cls:"card-a"},
+  {a:"Ma väärin armastust ja head — ka endalt.",d:"Joonista süda, mida hoiad enda kätes hellalt.",cls:"card-b"},
+  {a:"Minu tugevused on unikaalsed ja väärtuslikud.",d:"Joonista vapustav muster, mis on ainult sinu oma.",cls:"card-a"},
+  {a:"Ma lasen minevikul minna ja avan end tulevikule.",d:"Joonista uks, mis sulgub mineviku poole ja avaneb tuleviku poole.",cls:"card-b"},
+  {a:"Olen julge ja võimeline tegema julgeid valikuid.",d:"Joonista lõvi — su sisemine julgus.",cls:"card-a"},
+  {a:"Minu mõtted on positiivsed ja toetavad minu kasvu.",d:"Joonista pilvest päike, mis paistab läbi.",cls:"card-b"},
+  {a:"Ma annan endale loa teha vigu ja neist õppida.",d:"Joonista tärkav lill pärast vihma.",cls:"card-a"},
+  {a:"Olen täielikult armastav oma tugevuste ja nõrkustega.",d:"Joonista ringi sees kõik, mis sind eriliseks teeb.",cls:"card-b"},
+  {a:"Usun endasse ja oma võimesse leida lahendused.",d:"Joonista taskulamp pimedas teel — sa tead teed.",cls:"card-a"},
+  {a:"Ma olen võimeline kogema sügavat rõõmu ja rahulolu.",d:"Joonista soe, särav rõõm füüsilise kujundina.",cls:"card-b"},
+  {a:"Minu olemasolu muudab maailma paremaks.",d:"Joonista sinu ümber olev valgusering.",cls:"card-a"},
+  {a:"Ma lasen enda seest kokkupuudutada ennast.",d:"Joonista inimene, kes kallistab ennast.",cls:"card-b"},
+  {a:"Olen uhke iga sammu üle, mida olen astunud.",d:"Joonista jalajäljed, mis viivad kõrgemale.",cls:"card-a"},
+  {a:"Minu loomingulisus on piiramatult avar ja vaba.",d:"Joonista lõputu taevas, kus on ruumi kõigele.",cls:"card-b"},
+  {a:"Ma söandan olla haavatav — see on jõu märk.",d:"Joonista avatud roos, mis pole kartnud õitseda.",cls:"card-a"},
+  {a:"Olen võimeline looma sügavaid ja tähendusrikkaid suhteid.",d:"Joonista kaks puud, mille juured on kokku kasvanud.",cls:"card-b"},
+  {a:"Minu tuleviku on täis võimalusi ja rõõmu.",d:"Joonista horisont, kus päike tõuseb.",cls:"card-a"},
+  {a:"Ma annan oma energiat asjadele, mis toidavad mind.",d:"Joonista aed, kus sul on vabadus valida, mida kasvatada.",cls:"card-b"},
+  {a:"Olen täielikult kohal ja seotud selle hetke täiuslikkusega.",d:"Joonista praegune hetk — kõik, mis sind ümbritseb.",cls:"card-a"},
+  {a:"Ma söandan unistada suurelt ja tegutseda julgemalt.",d:"Joonista täht, mis on sinust kõrgemal — kuid ligipääsetav.",cls:"card-b"},
+  {a:"Minu sisemine rahu on sügav ja muutumatu.",d:"Joonista sügav meri — tormid pealispinnal, rahulik sügavus all.",cls:"card-a"},
+  {a:"Olen võimeline tegema positiivseid muutusi oma elus.",d:"Joonista liblikas — teisenemine on võimalik.",cls:"card-b"},
+  {a:"Ma lasen endal nautida elu ja selle rõõme täielikult.",d:"Joonista pidulaud, mis on valmistatud ainult sinu jaoks.",cls:"card-a"},
+  {a:"Olen täielikult piisav ilma kellegi heakskiiduta.",d:"Joonista inimene, kes seisab kindlalt omal pinnasel.",cls:"card-b"},
+  {a:"Minu armastusvõime on suur ja piiramatult voolav.",d:"Joonista süda, millest voolab armastus igas suunas.",cls:"card-a"},
+  {a:"Usun, et parim on alati ees.",d:"Joonista tee, mis kulgeb läbi erinevate aastaaegade — kevad on ees.",cls:"card-b"},
+  {a:"Ma söandan küsida abi, kui seda vajan.",d:"Joonista käed, mis sirutuvad abikäe poole.",cls:"card-a"},
+  {a:"Olen täielikult võimeline suurt armastust vastu võtma.",d:"Joonista avatud rind, mis on valmis armastust vastu võtma.",cls:"card-b"},
+  {a:"Minu sõnadel on jõud ja tähendus.",d:"Joonista sõnad, mis lähevad suust maailma ja muudavad seda.",cls:"card-a"},
+  {a:"Ma söandan olla uhke selle üle, kes olen.",d:"Joonista inimene, kes seisab uhkelt päikese all.",cls:"card-b"},
+  {a:"Olen võimeline looma elu, mis täidab mind rõõmuga.",d:"Joonista maja või ruum, kus tunned end täielikult kodus.",cls:"card-a"},
+  {a:"Minu sisemine laps on mänguhimuline ja elurõõmus.",d:"Joonista laps, kes jookseb vabalt platsil.",cls:"card-b"},
+  {a:"Ma annan endale loa olla täpselt see, kes olen.",d:"Joonista sinu enda portree — armastusega, mitte kriitikaga.",cls:"card-a"},
+  {a:"Olen täielikult elus, täielikult hinges, täielikult mina.",d:"Joonista suur hingav ring — sinu olemasolu täius.",cls:"card-b"}
+];
+var c = document.getElementById('container');
+for (var i = 0; i < cards.length; i += 4) {
+  var pg = document.createElement('div');
+  pg.className = 'page affirm-page';
+  var grid = document.createElement('div');
+  grid.className = 'affirm-grid';
+  for (var j = i; j < Math.min(i+4, cards.length); j++) {
+    var card = cards[j];
+    var el = document.createElement('div');
+    el.className = 'card ' + card.cls;
+    el.innerHTML = '<div class="card-num">Kaart ' + (j+1) + ' / 40</div>' +
+      '<div class="card-affirm">' + card.a + '</div>' +
+      '<div class="card-draw">✏️ ' + card.d + '</div>';
+    grid.appendChild(el);
+  }
+  pg.appendChild(grid);
+  c.appendChild(pg);
+}
+</script>
+</body>
+</html>
