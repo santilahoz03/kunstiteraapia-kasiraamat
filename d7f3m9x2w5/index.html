@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Boonus 1 — 17 täiendavat kunstiteraapia harjutust</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: 210mm 297mm; margin: 0; }
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --lav:#D9C9F7;--lavd:#B89FE0;--pink:#F3B8D2;--title:#4E4036;--body:#6F6258;--body2:#8A7A70;--ft:'Playfair Display',serif;--fb:'Inter',sans-serif; }
+body { font-family: var(--fb); color: var(--body); background: #FFF8F4; }
+.page { width:210mm; min-height:297mm; position:relative; page-break-after:always; overflow:hidden; display:flex; flex-direction:column; }
+.cover { background:linear-gradient(160deg,#D9C9F7 0%,#F3B8D2 50%,#FFF8F4 100%); align-items:center; justify-content:center; text-align:center; padding:40mm 20mm; }
+.cover-badge { font-size:9pt; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--lavd); background:rgba(255,255,255,.65); padding:5px 18px; border-radius:20px; display:inline-block; margin-bottom:20px; }
+.cover h1 { font-family:var(--ft); font-size:30pt; color:var(--title); line-height:1.2; margin-bottom:12px; }
+.cover p { font-size:12pt; color:var(--body); margin-bottom:24px; line-height:1.5; }
+.cover-pill { display:inline-block; background:var(--title); color:#fff; padding:7px 20px; border-radius:24px; font-size:9pt; font-weight:600; margin:3px; }
+.ex-page { background:#fff; padding:14mm 18mm; }
+.ex-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6mm; padding-bottom:4mm; border-bottom:2px solid var(--lav); }
+.ex-topic { font-size:8pt; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--lavd); }
+.ex-num { font-size:8pt; color:var(--body2); }
+.ex-title { font-family:var(--ft); font-size:17pt; color:var(--title); margin-bottom:4mm; line-height:1.3; }
+.ex-mat { background:#f9f4ff; border-radius:8px; padding:6px 10px; margin-bottom:5mm; font-size:9pt; color:var(--body2); }
+.ex-mat strong { color:var(--lavd); }
+.ex-steps { display:flex; flex-direction:column; gap:3mm; margin-bottom:5mm; }
+.ex-step { display:flex; gap:10px; align-items:flex-start; }
+.ex-step-n { width:20px; height:20px; background:linear-gradient(135deg,var(--lav),var(--pink)); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:8pt; font-weight:700; color:var(--title); flex-shrink:0; margin-top:1px; }
+.ex-step p { font-size:10pt; color:var(--body); line-height:1.55; }
+.ex-space { flex:1; border:1.5px dashed #d9c9f7; border-radius:8px; margin:3mm 0; min-height:60mm; }
+.ex-refl { background:linear-gradient(135deg,#fef3f8,#f0ebff); border-radius:8px; padding:8px 12px; }
+.ex-refl-label { font-size:8pt; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--lavd); margin-bottom:3px; }
+.ex-refl p { font-size:10pt; color:var(--title); font-style:italic; line-height:1.5; }
+@media print { .no-print { display:none!important; } }
+@media screen { body { background:#e0d8d0; padding:20px; } .page { margin:0 auto 20px; box-shadow:0 4px 20px rgba(0,0,0,.2); } .print-btn { position:fixed; bottom:24px; right:24px; background:var(--lavd); color:#fff; border:none; border-radius:50px; padding:14px 28px; font-size:14px; font-weight:700; cursor:pointer; z-index:1000; } }
+</style>
+</head>
+<body>
+<button class="print-btn no-print" onclick="window.print()">🖨️ Prindi / Salvesta PDF</button>
+<div class="page cover">
+  <div class="cover-badge">🎁 Boonus 1 · Kunstiteraapia Käsiraamat</div>
+  <h1>17 täiendavat<br>kunstiteraapia harjutust</h1>
+  <p>Loovharjutused, millega saad oma tundeid teadlikumalt tunnetada ja väljendada</p>
+  <div>
+    <span class="cover-pill">🎨 17 harjutust</span>
+    <span class="cover-pill">📖 Prinditav PDF</span>
+    <span class="cover-pill">✍️ Ilma eelteadmisteta</span>
+  </div>
+</div>
+<div id="container"></div>
+<script>
+var exs = [
+  {title:"Värvide dialoog",mat:"Paber, värvipliiatsid",steps:["Vali kaks värvi, mis esindavad kahte erinevat tunnet.","Lase neil kaks värvi 'rääkida' — kordamööda joonista.","Vaata dialoogi, mis tekib."],refl:"Mida need kaks tunnet üksteisele ütlesid?"},
+  {title:"Silmad kinni joonistamine",mat:"Paber, pliiats",steps:["Sulge silmad.","Joonista midagi ainult tunde järgi — 3 minutit.","Ava silmad ja vaata, mis tekkis."],refl:"Mida märkasid, kui silmad olid kinni?"},
+  {title:"Loodusega ühendus",mat:"Paber, rohelised värvid",steps:["Mõtle ühele looduse elemendile (puu, meri, mägi).","Joonista see element.","Kirjuta, mida see element sulle annab."],refl:"Kuidas tunneksid end, kui oleksid nüüd selles kohas?"},
+  {title:"Kujutluspildid",mat:"Paber, värvipliiatsid",steps:["Sulge silmad ja hinga 3 korda sügavalt.","Lase tekitada pilt sinu meeles.","Joonista see pilt."],refl:"Millest see kujutluspilt räägib?"},
+  {title:"Joonistamine muusikaga",mat:"Paber, pliiatid, muusika",steps:["Pane mängima rahulik muusika.","Joonista, kuidas see muusika su kehas tunneb.","Kasuta liigutusi, mitte vorme."],refl:"Milline osa muusikast mõjutas su jooni kõige rohkem?"},
+  {title:"Tekstuuride kogumik",mat:"Erinevad materjalid (paber, tekstiil jne)",steps:["Koguge 3-5 erinevat tekstuuriga materjali.","Kandke värviga iga materjali jälg paberile.","Loodage neist mosaiik."],refl:"Milline tekstuur tunnetab kõige rohkem nagu praegune sinu tunne?"},
+  {title:"Peeglile joonistamine",mat:"Vana peegel, vastavad pliiatsid/värvid",steps:["Joonista oma peegelpildile ümber midagi positiivset.","Kirjuta üks sõna, mis peaks sind meelde tuletama igal hommikul."],refl:"Mida tahad endale iga päev meelde tuletada?"},
+  {title:"Rütmilised jooned",mat:"Paber, pliiatid",steps:["Sea taimer 3 minutiks.","Joonista rütmiliselt — üks korduv liigutus.","Lase rütm sind rahustada."],refl:"Milline rütm tuleb loomulikult su käe liikumisest?"},
+  {title:"Laste maal",mat:"Paber, värvipliiatsid",steps:["Mõtle lapsepõlve suurimale rõõmule.","Joonista see rõõm nii, nagu joonistaksid lapsena.","Lase lapsele luba olla täielikult rõõmus."],refl:"Mida see rõõm sulle praegugi annab?"},
+  {title:"Hingamise kunst",mat:"Paber, sinised/rohelised värvid",steps:["Hinga sisse — joonista sisse poolt.","Hinga välja — joonista välja poolt.","Korrake 5 korda."],refl:"Mida märkasid erinevust sisse- ja väljahingatavate joonte vahel?"},
+  {title:"Kollaažiga unistamine",mat:"Ajakirjad, käärid, liim, paber",steps:["Lõika pildid, mis sind tõmbavad — ilma mõtlemata.","Kleebi need lehele.","Pane pealkiri."],refl:"Mida see kollaažid sulle räägib sinu unistustest?"},
+  {title:"Jõu loomine",mat:"Paber, tugevad pliiatsid",steps:["Mõtle oma suurima jõuallika.","Joonista see jõud — tugev, selge, jõuline.","Kasutage paksuseid jooni ja tugevat rõhku."],refl:"Kus tunned seda jõudu oma kehas?"},
+  {title:"Hea sõna kujundis",mat:"Paber, värvipliiatsid",steps:["Mõtle ühele sõnale, mis sind täna innustab.","Joonista see sõna kujundina — mitte tähtedega.","Värvige eredad värvid."],refl:"Kuidas erineb see kujund sellest sõnast, mida tavaliselt kasutad?"},
+  {title:"Lilled peale vihma",mat:"Paber, rohelised ja värvikad pliiatsid",steps:["Joonista vihma.","Nüüd joonista lilled, mis kasvavad vihma järel.","Iga lill = üks hea asi, mis tuli raskuse järel."],refl:"Millised lilled on kasvanud su elu 'vihmade' järel?"},
+  {title:"Avastuste lehed",mat:"Paber, kõik värvid, mis soovid",steps:["Anna endale 10 minutit vaba joonistamist — ilma eesmärgita.","Lase käel liikuda.","Pärast: vaata, mis on tekkinud."],refl:"Mida avastasid selle vaba joonistamise ajal?"},
+  {title:"Positiivne sugestioon",mat:"Paber, kuldne/kollane pliiats",steps:["Kirjuta üks positiivne kinnitus iseendale (nt 'Ma olen piisav').","Joonista see sõna või lause kaunitesse kujunditesse.","Riputa see oma tuppa."],refl:"Kas seda kinnitust on lihtne uskuda? Mida vajab see, et kindlam muutuda?"},
+  {title:"Lõpukas ja algus",mat:"Paber, kaks eri värvi",steps:["Ühe värviga: joonista midagi, mis lõppes.","Teise värviga: joonista midagi uut, mis algab.","Leia nende vahel ühenduspunkt."],refl:"Kuidas tunneb sinu keha lõpetuste ja alguste hetkedel?"}
+];
+var c = document.getElementById('container');
+exs.forEach(function(ex, i) {
+  var pg = document.createElement('div');
+  pg.className = 'page ex-page';
+  var stepsHtml = ex.steps.map(function(s, si) {
+    return '<div class="ex-step"><div class="ex-step-n">'+(si+1)+'</div><p>'+s+'</p></div>';
+  }).join('');
+  pg.innerHTML =
+    '<div class="ex-header"><span class="ex-topic">🎨 Täiendavad harjutused</span><span class="ex-num">Harjutus '+(i+1)+' / 17</span></div>' +
+    '<div class="ex-title">'+ex.title+'</div>' +
+    '<div class="ex-mat"><strong>Vajad:</strong> '+ex.mat+'</div>' +
+    '<div class="ex-steps">'+stepsHtml+'</div>' +
+    '<div class="ex-space"></div>' +
+    '<div class="ex-refl"><div class="ex-refl-label">💭 Mõtisklus</div><p>'+ex.refl+'</p></div>';
+  c.appendChild(pg);
+});
+</script>
+</body>
+</html>
