@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Boonus 2 — 20 harjutust suurema enesehinnangu jaoks</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+@page { size:210mm 297mm; margin:0; }
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+:root { --lav:#D9C9F7;--lavd:#B89FE0;--pink:#F3B8D2;--title:#4E4036;--body:#6F6258;--body2:#8A7A70;--ft:'Playfair Display',serif;--fb:'Inter',sans-serif; }
+body { font-family:var(--fb); color:var(--body); background:#FFF8F4; }
+.page { width:210mm; min-height:297mm; position:relative; page-break-after:always; overflow:hidden; display:flex; flex-direction:column; }
+.cover { background:linear-gradient(160deg,#D9C9F7 0%,#F3B8D2 50%,#FFF8F4 100%); align-items:center; justify-content:center; text-align:center; padding:40mm 20mm; }
+.cover-badge { font-size:9pt; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--lavd); background:rgba(255,255,255,.65); padding:5px 18px; border-radius:20px; display:inline-block; margin-bottom:20px; }
+.cover h1 { font-family:var(--ft); font-size:28pt; color:var(--title); line-height:1.2; margin-bottom:12px; }
+.cover p { font-size:12pt; color:var(--body); margin-bottom:24px; line-height:1.5; }
+.cover-pill { display:inline-block; background:var(--title); color:#fff; padding:7px 20px; border-radius:24px; font-size:9pt; font-weight:600; margin:3px; }
+.ex-page { background:#fff; padding:14mm 18mm; }
+.ex-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6mm; padding-bottom:4mm; border-bottom:2px solid var(--lav); }
+.ex-topic { font-size:8pt; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--lavd); }
+.ex-num { font-size:8pt; color:var(--body2); }
+.ex-title { font-family:var(--ft); font-size:17pt; color:var(--title); margin-bottom:4mm; line-height:1.3; }
+.ex-mat { background:#f9f4ff; border-radius:8px; padding:6px 10px; margin-bottom:5mm; font-size:9pt; color:var(--body2); }
+.ex-mat strong { color:var(--lavd); }
+.ex-steps { display:flex; flex-direction:column; gap:3mm; margin-bottom:5mm; }
+.ex-step { display:flex; gap:10px; align-items:flex-start; }
+.ex-step-n { width:20px; height:20px; background:linear-gradient(135deg,var(--lav),var(--pink)); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:8pt; font-weight:700; color:var(--title); flex-shrink:0; margin-top:1px; }
+.ex-step p { font-size:10pt; color:var(--body); line-height:1.55; }
+.ex-space { flex:1; border:1.5px dashed #d9c9f7; border-radius:8px; margin:3mm 0; min-height:60mm; }
+.ex-refl { background:linear-gradient(135deg,#fef3f8,#f0ebff); border-radius:8px; padding:8px 12px; }
+.ex-refl-label { font-size:8pt; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--lavd); margin-bottom:3px; }
+.ex-refl p { font-size:10pt; color:var(--title); font-style:italic; line-height:1.5; }
+@media print { .no-print { display:none!important; } }
+@media screen { body { background:#e0d8d0; padding:20px; } .page { margin:0 auto 20px; box-shadow:0 4px 20px rgba(0,0,0,.2); } .print-btn { position:fixed; bottom:24px; right:24px; background:var(--lavd); color:#fff; border:none; border-radius:50px; padding:14px 28px; font-size:14px; font-weight:700; cursor:pointer; z-index:1000; } }
+</style>
+</head>
+<body>
+<button class="print-btn no-print" onclick="window.print()">🖨️ Prindi / Salvesta PDF</button>
+<div class="page cover">
+  <div class="cover-badge">💜 Boonus 2 · Kunstiteraapia Käsiraamat</div>
+  <h1>20 harjutust suurema<br>enesehinnangu jaoks</h1>
+  <p>Juhendatud harjutused, mis võivad tugevdada su enesekindlust ja isiklikku heaolu</p>
+  <div>
+    <span class="cover-pill">💜 20 harjutust</span>
+    <span class="cover-pill">📖 Prinditav PDF</span>
+  </div>
+</div>
+<div id="container"></div>
+<script>
+var exs = [
+  {title:"Ma olen väärt",mat:"Paber, värvipliiatsid",steps:["Joonista ringi keskel 'Mina'.","Joonista ringi igasse suunda jooni.","Iga joone lõpus: üks asi, milles oled väärtuslik."],refl:"Kuidas tunneb su keha, kui loed need asjad?"},
+  {title:"Jõu allikas endas",mat:"Paber, rohelised värvid",steps:["Joonista allikas, kust voolab puhas vesi.","Iga veejuga esindab ühte jõudu, mis sul juba on.","Kirjuta iga joa kõrvale, mis jõud see on."],refl:"Milliseid jõude ignoreerid endas?"},
+  {title:"Enese kaitsja",mat:"Paber, kuldne/oranž värv",steps:["Joonista vapp (heraldiliseks).","Vapi igasse osasse kirjuta üks väärtus, mis sind kaitseb.","Pane vappile oma sümboolne tunnuslause."],refl:"Kas su enda kaitsja on piisavalt tugev?"},
+  {title:"Hea sõber minale",mat:"Paber, pliiats",steps:["Kirjuta kiri iseendale nii, nagu kirjutaksid oma parimale sõbrale.","Alusta: 'Kallis [oma nimi]...'","Ütle talle kõik, mida tahad, et ta teaks."],refl:"Mida see kiri sulle paljastas?"},
+  {title:"Komplimendikaart",mat:"Paber, värvipliiatsid",steps:["Joonista kaart.","Kirjuta sinna 5 komplimenti iseendale.","Värvige kaart kaunilt."],refl:"Millised komplimendid olid kõige raskemad kirjutada?"},
+  {title:"Tugevuste puu",mat:"Paber, roheline värv",steps:["Joonista suur puu.","Juured: alused, mis toetavad sind.","Oksad: su tugevused ja oskused.","Lehed: konkreetsed teod, kus oled neid kasutanud."],refl:"Milline oks on kõige tugevam?"},
+  {title:"Peegel",mat:"Paber, pliiats",steps:["Joonista peegel.","Kirjuta peeglisse, mida näeksid, kui vaataksid ennast armastusega.","Lisage soojad, heledad värvid."],refl:"Kas sul on lihtne vaadata ennast armastusega?"},
+  {title:"Saavutuste riiulid",mat:"Paber, pliiats",steps:["Joonista riiulid.","Iga riiul = üks eluperiood.","Raamatute seljas: su saavutused sellest perioodist."],refl:"Millist saavutust hindad kõige rohkem?"},
+  {title:"Sisemise kriitiku vaigistamine",mat:"Paber, kaks pliiatsit",steps:["Kirjuta kriitiline sõnum, mida sisemine kriitik sulle ütleb.","Nüüd kirjuta vastus, nagu kirjutaks treener.","Joonista mõlemad kujunditena."],refl:"Kumba hääl on sinust tugevam?"},
+  {title:"Edusammude redel",mat:"Paber, värvipliiatsid",steps:["Joonista redel.","Iga pulk = üks edusamm viimaste kuude jooksul.","Värvige iga pulk erinevalt."],refl:"Mitmel pulgal oled juba?"},
+  {title:"Hea kehaga suhe",mat:"Paber, pehmed värvid",steps:["Joonista oma keha siluett.","Kirjuta igasse kehaosasse üks asi, mille eest oled selle eest tänulik.","Kasutage soojad, mitterusavad värvid."],refl:"Milliseid keha osi ignoreerid tihti?"},
+  {title:"Lahkuse harjutus",mat:"Paber, roosa/lilla",steps:["Joonista süda.","Kirjuta südamesse: mida su sisemine lahke hääl ütleks sulle praegu?","Värvige südame soojalt."],refl:"Kas sul on lihtne olla endaga lahke?"},
+  {title:"Positiivsete sõnadega täitmine",mat:"Paber, värvipliiatsid",steps:["Joonista oma siluett.","Täida see ainult positiivsete sõnadega, mis sind iseloomustavad.","Kasutage eredad, elavad värvid."],refl:"Kas need sõnad tunduvad tõesena?"},
+  {title:"Enese usaldamine",mat:"Paber, kuldne värv",steps:["Joonista võtme.","Kirjuta võtmesse: mida pead avama, et rohkem ennast usaldada?","Joonista uks, mille see võti avab."],refl:"Mis saab, kui avad selle ukse?"},
+  {title:"Muutuste hetk",mat:"Paber, kaks eri värvi",steps:["Ühe värviga: kes oled praegu.","Teise värviga: kelleks saada tahad.","Leia nende vahel sild."],refl:"Mida peaksid hakkama tegema, et see sild ehitada?"},
+  {title:"Lahkuse käed",mat:"Paber, roosa värv",steps:["Jälgi oma käed paberile.","Täida käed lahkete sõnade ja tegudega, mida oled iseendale andnud.","Värvige pehmed värvid."],refl:"Mida su käed on sinule andnud?"},
+  {title:"Üks hea asi minust",mat:"Paber, kuldne/kollane",steps:["Iga päev selle nädala jooksul: kirjuta üks asi, mida tegid hästi.","Joonista iga asi kujundina.","Nädala lõpus: vaata mustrit."],refl:"Mida märkasid selle harjutuse tegemise kohta?"},
+  {title:"Enese vastuvõtmine",mat:"Paber, sinised värvid",steps:["Joonista meri.","Lainetesse kirjuta asjad endas, mis sulle ei meeldi.","Nüüd joonista päike — soe, armastav valgus nende lainete kohal."],refl:"Kas saad armastada ennast ka nende lainete ajal?"},
+  {title:"Julguse sümbol",mat:"Paber, oranž/kuldne",steps:["Mõtle ühele hetkele, kui olid julge.","Joonista sümbol sellele julgusele.","Kirjuta kõrvale: mida see julgus sulle andis?"],refl:"Kuidas saad tuua rohkem julgust oma igapäevaellu?"},
+  {title:"Armastuse kiri tulevikule",mat:"Paber, pliiats",steps:["Kirjuta iseendale kiri 10 aasta tulevikust.","Räägi praegusele sinale: mida ta on juba saavutanud?","Joonista kõrvale sümbol sellele kirjale."],refl:"Mida see kiri sulle praegu ütleb?"}
+];
+var c = document.getElementById('container');
+exs.forEach(function(ex, i) {
+  var pg = document.createElement('div');
+  pg.className = 'page ex-page';
+  var stepsHtml = ex.steps.map(function(s, si) {
+    return '<div class="ex-step"><div class="ex-step-n">'+(si+1)+'</div><p>'+s+'</p></div>';
+  }).join('');
+  pg.innerHTML =
+    '<div class="ex-header"><span class="ex-topic">💜 Enesehinnang</span><span class="ex-num">Harjutus '+(i+1)+' / 20</span></div>' +
+    '<div class="ex-title">'+ex.title+'</div>' +
+    '<div class="ex-mat"><strong>Vajad:</strong> '+ex.mat+'</div>' +
+    '<div class="ex-steps">'+stepsHtml+'</div>' +
+    '<div class="ex-space"></div>' +
+    '<div class="ex-refl"><div class="ex-refl-label">💭 Mõtisklus</div><p>'+ex.refl+'</p></div>';
+  c.appendChild(pg);
+});
+</script>
+</body>
+</html>
