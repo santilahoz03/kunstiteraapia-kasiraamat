@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Boonus 4 — Impulsid emotsionaalsete blokaadide lahendamiseks</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+@page { size:210mm 297mm; margin:0; }
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+:root { --lav:#D9C9F7;--lavd:#B89FE0;--pink:#F3B8D2;--title:#4E4036;--body:#6F6258;--body2:#8A7A70;--ft:'Playfair Display',serif;--fb:'Inter',sans-serif; }
+body { font-family:var(--fb); color:var(--body); background:#FFF8F4; }
+.page { width:210mm; min-height:297mm; position:relative; page-break-after:always; overflow:hidden; display:flex; flex-direction:column; }
+.cover { background:linear-gradient(160deg,#D9C9F7 0%,#F3B8D2 50%,#FFF8F4 100%); align-items:center; justify-content:center; text-align:center; padding:40mm 20mm; }
+.cover-badge { font-size:9pt; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--lavd); background:rgba(255,255,255,.65); padding:5px 18px; border-radius:20px; display:inline-block; margin-bottom:20px; }
+.cover h1 { font-family:var(--ft); font-size:24pt; color:var(--title); line-height:1.2; margin-bottom:12px; }
+.cover p { font-size:11pt; color:var(--body); margin-bottom:24px; line-height:1.5; }
+.cover-pill { display:inline-block; background:var(--title); color:#fff; padding:7px 20px; border-radius:24px; font-size:9pt; font-weight:600; margin:3px; }
+.ex-page { background:#fff; padding:14mm 18mm; }
+.ex-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6mm; padding-bottom:4mm; border-bottom:2px solid var(--lav); }
+.ex-topic { font-size:8pt; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--lavd); }
+.ex-num { font-size:8pt; color:var(--body2); }
+.ex-title { font-family:var(--ft); font-size:17pt; color:var(--title); margin-bottom:4mm; line-height:1.3; }
+.ex-mat { background:#f9f4ff; border-radius:8px; padding:6px 10px; margin-bottom:5mm; font-size:9pt; color:var(--body2); }
+.ex-mat strong { color:var(--lavd); }
+.ex-steps { display:flex; flex-direction:column; gap:3mm; margin-bottom:5mm; }
+.ex-step { display:flex; gap:10px; align-items:flex-start; }
+.ex-step-n { width:20px; height:20px; background:linear-gradient(135deg,var(--lav),var(--pink)); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:8pt; font-weight:700; color:var(--title); flex-shrink:0; margin-top:1px; }
+.ex-step p { font-size:10pt; color:var(--body); line-height:1.55; }
+.ex-space { flex:1; border:1.5px dashed #d9c9f7; border-radius:8px; margin:3mm 0; min-height:60mm; }
+.ex-refl { background:linear-gradient(135deg,#fef3f8,#f0ebff); border-radius:8px; padding:8px 12px; }
+.ex-refl-label { font-size:8pt; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--lavd); margin-bottom:3px; }
+.ex-refl p { font-size:10pt; color:var(--title); font-style:italic; line-height:1.5; }
+@media print { .no-print { display:none!important; } }
+@media screen { body { background:#e0d8d0; padding:20px; } .page { margin:0 auto 20px; box-shadow:0 4px 20px rgba(0,0,0,.2); } .print-btn { position:fixed; bottom:24px; right:24px; background:var(--lavd); color:#fff; border:none; border-radius:50px; padding:14px 28px; font-size:14px; font-weight:700; cursor:pointer; z-index:1000; } }
+</style>
+</head>
+<body>
+<button class="print-btn no-print" onclick="window.print()">🖨️ Prindi / Salvesta PDF</button>
+<div class="page cover">
+  <div class="cover-badge">🔓 Boonus 4 · Kunstiteraapia Käsiraamat</div>
+  <h1>Impulsid emotsionaalsete<br>blokaadide lahendamiseks</h1>
+  <p>Impulsid, mis aitavad sul sisemisi blokaadid ära tunda ja arendada uusi perspektiive</p>
+  <div>
+    <span class="cover-pill">🔓 30 harjutust</span>
+    <span class="cover-pill">📖 Prinditav PDF</span>
+  </div>
+</div>
+<div id="container"></div>
+<script>
+var exs = [
+  {title:"Blokaadi kaardistamine",mat:"Paber, värvipliiatsid",steps:["Mõtle ühele valdkonnale elus, kus tunned blokaati (töö, suhted, loovus jne).","Joonista see blokaad kujundina — kui suur see on, mis värvi?","Kirjuta ümber kujundi, mida blokaad sulle ütleb."],refl:"Mis on see blokaad tegelikult kaitsmas?"},
+  {title:"Sein ja sild",mat:"Paber, kaks eri värvi",steps:["Joonista sein enda ees — mis takistab sul edasi liikuda?","Nüüd joonista sein, kuid täpselt selle taha on see, mida tahad.","Joonista sild, kuidas seinast üle pääseda."],refl:"Millest on sein tehtud? Kas saad selle eemaldada?"},
+  {title:"Lapsed ja piirangud",mat:"Paber, pliiats",steps:["Mõtle uskumusele, mis sind piirab ('Ma ei suuda...', 'Ma ei ole piisav...').","Joonista see uskumus lapsena (millal see sai alguse?).","Räägi selle lapsega — mida vajab ta teada?"],refl:"Kas see uskumus on veel täna tõene?"},
+  {title:"Hirmude kollaaž",mat:"Ajakirjad, käärid, liim",steps:["Lõika pildid ja sõnad, mis kujutavad su hirmude põhjuseid.","Kleebi need lehele.","Nüüd katke need uute piltidega, mis kujutavad lahendusi."],refl:"Mida näed, kui hirm on kaetud lahendusega?"},
+  {title:"Keha blokaad",mat:"Paber, värvipliiatsid",steps:["Joonista keha siluett.","Märgi kohad, kus tunned füüsilist pinget blokaadiga seoses.","Joonista valgust nende kohtade kohal."],refl:"Mida su keha räägib sulle selle blokaadi kohta?"},
+  {title:"Kolme sammu plaan",mat:"Paber, pliiats",steps:["Kirjuta üks blokaad, mida tahad lahendada.","Joonista kolm sammu selle blokaadi ületamiseks (väga väiksed sammud).","Vali üks samm, mida teha täna."],refl:"Milline väikseim samm oleks see?"},
+  {title:"Vastupanek",mat:"Paber, kaks pliiatsit",steps:["Joonista blokaadi kujund.","Nüüd joonista kõrvale jõud, mis selle blokaadile vastu seisab.","Kuidas see jõud on tugevam?"],refl:"Millised ressursid sul juba on selle blokaadi ületamiseks?"},
+  {title:"Luba endale",mat:"Paber, lilla/roosa värv",steps:["Kirjuta üles kolm asja, mida tahaksid endale lubada (et olla sina ise).","Joonista igaühe juurde südame.","Värvige südamed soojalt."],refl:"Miks ei ole sul seda luba olnud?"},
+  {title:"Muutusele avamine",mat:"Paber, oranž värv",steps:["Joonista uks suletuna.","Kirjuta uksele: mis takistab sul selle avamast?","Nüüd joonista sama uks avatuna — mida näed teisel pool?"],refl:"Mida saad sellest avatud uksest saada?"},
+  {title:"Ressursside kaardistamine",mat:"Paber, värvipliiatsid",steps:["Joonista ringi keskel blokaad.","Joonista ümber kõik ressursid, oskused ja inimesed, kes võiksid aidata.","Milliseid ressursse veel ei kasuta?"],refl:"Mida peaksid hakkama tegema, et neid ressursse kasutada?"},
+  {title:"Ebamugavustsoon",mat:"Paber, kaks eri värvi",steps:["Joonista kaks ringi üksteise sees (mugavustsoon ja väljapoole).","Märgi üks asi, mida tahad proovida väljaspool mugavustsooni.","Mida vajad, et sellele sammule astuda?"],refl:"Mis on kõige halvim, mis saab juhtuda? Kas saad sellega toime tulla?"},
+  {title:"Perfektsionismi lahtiharutamine",mat:"Paber, kaks pliiatsit",steps:["Kirjuta üks asi, milles tunned perfektsionismi survet.","Joonista perfektsionist kujundina — mis see on?","Nüüd joonista 'piisavalt hea' kujund. Kuidas see erineb?"],refl:"Kas 'piisavalt hea' on tihti parem kui 'täiuslik'?"},
+  {title:"Sõltuvus ja vabadus",mat:"Paber, pliiats",steps:["Mõtle ühele harjumusele või käitumisele, mis takistab sind elamast nii nagu tahad.","Joonista see harjumus ahelana.","Joonista kõrvale, milline oleks elu selle ahelata."],refl:"Mida saad täna teha, et üht linki lahti harutada?"},
+  {title:"Vastuolu kahe poole vahel",mat:"Paber, kaks eri värvi",steps:["Joonista kaks ringi.","Üks ring: mida tahad.","Teine ring: mida kardad kaotada, kui saad seda.","Leia nende vahel ühinemine."],refl:"Kas need kaks saavad koos eksisteerida?"},
+  {title:"Toetuse otsimine",mat:"Paber, pliiats",steps:["Kirjuta blokaad paberil.","Nüüd kirjuta ühe inimese nimi, kes võiks aidata.","Joonista, kuidas see vestlus välja näeks."],refl:"Millal saad selle inimesega rääkida?"},
+  {title:"Riskide kaardistamine",mat:"Paber, kaks eri värvi",steps:["Ühe värviga: kirjuta riskid, mis on seotud blokaadi ületamisega.","Teise värviga: kirjuta hüved, mis saad blokaadi ületamisel.","Kumb pool on raskemam?"],refl:"Kas hüved on suuremad kui riskid?"},
+  {title:"Muutuse energia",mat:"Paber, oranž/punane värv",steps:["Mõtle ühele muutusele, mida pead tegema.","Joonista energia, mis sul on selleks muutuseks.","Värvige see energia eredalt ja jõuliselt."],refl:"Kuidas kasutad seda energiat?"},
+  {title:"Piirangute uurimine",mat:"Paber, pliiats",steps:["Kirjuta üks piirang, mida tunned: 'Ma ei saa X teha, sest Y.'","Küsi endalt: Kas Y on tõesti tõsi?","Joonista, mis juhtuks, kui Y ei oleks tõsi."],refl:"Mitu piirangut on tegelikult enda poolt loodud?"},
+  {title:"Tubade avamine",mat:"Paber, võtmekujund",steps:["Joonista maja erinevate suletud tubadega.","Iga tuba esindab üht osa sinust, mida ei julge avada.","Joonista võti, mis need avab."],refl:"Millise toa tahaksid esimesena avada?"},
+  {title:"Jõu jõgi",mat:"Paber, sinine värv",steps:["Joonista jõgi, mis voolab läbi su elu.","Kividel jões kirjuta blokaadid.","Joonista vesi, mis voolab nende kivide ümber."],refl:"Kuidas su jõgi voolab praegu?"},
+  {title:"Uus narratiiv",mat:"Paber, pliiats",steps:["Kirjuta vana lugu, mida räägid iseendale (nt 'Ma ei suuda kunagi...').","Nüüd kirjuta uus lugu — üks, kus sa suudad.","Joonista see uus lugu kujundina."],refl:"Kas uus lugu tundub uskumatuna? Mida vajab, et uskuda?"},
+  {title:"Ebakindlus ja kontroll",mat:"Paber, kaks eri värvi",steps:["Ühe värviga: joonista asjad, mida saad kontrollida.","Teise värviga: asjad, mida ei saa kontrollida.","Kuida saad rahulikumalt elada ebakindluses?"],refl:"Mis on praegu suurim ebakindlus? Kuidas oled sellega toime tulnud?"},
+  {title:"Küsimus blokaadile",mat:"Paber, pliiats",steps:["Küsi oma blokaadilt otse: Mida sa minult tahad?","Kirjuta vastus ilma filtrita.","Joonista, mida blokaad tegelikult vajab."],refl:"Kas blokaad on tegelikult hea kavatsusega?"},
+  {title:"Luba täiuslikkuse puudumisel",mat:"Paber, pehmed värvid",steps:["Joonista midagi tahtlikult 'valesti'.","Vaata — kas see on ka ilus?","Kirjuta üles: millistes valdkondades lubad endale 'valesti teha'?"],refl:"Mida saad saavutada, kui loobud täiuslikkuse nõudest?"},
+  {title:"Muutuse momentum",mat:"Paber, oranž värv",steps:["Mõtle väikseimale võimalikule sammule millegi muutmiseks.","Joonista seda sammu — väga väikene, kuid konkreetne.","Millal täpselt saad selle sammu teha?"],refl:"Üks samm viib järgmiseni."},
+  {title:"Toetav kogukond",mat:"Paber, värvipliiatsid",steps:["Joonista ringi 'Mina' keskel.","Ringi ümber: inimesed, kes toetavad su kasvu.","Kas oled kasutanud nende tuge?"],refl:"Kelle poole saaksid pöörduda praeguse blokaadiga?"},
+  {title:"Hingamise blokaad",mat:"Paber, sinised värvid",steps:["Hinga sügavalt ja joonista hingamist.","Kus sa hoidid hinge kinni?","Joonista, mis juhtub, kui lased täielikult välja hingata."],refl:"Mida hoiad sisse oma elus, mida ei lase välja?"},
+  {title:"Enese kaastunne",mat:"Paber, roosa värv",steps:["Joonista oma käed, mis hoiavad oma südant.","Kirjuta, mida need käed sulle ütlevad blokaadi ajal.","Kas need on lahked?"],refl:"Kuidas muutuks su blokaad, kui oleksid endaga lahkem?"},
+  {title:"Kollaažiga ületamine",mat:"Ajakirjad, käärid, liim",steps:["Lõika pildid, mis kujutavad blokaadi.","Nüüd lõika üle neile pildid, mis kujutavad lahendust.","Loo kollaažis üleminek."],refl:"Mida see ülemineku kollaažid sulle räägib?"},
+  {title:"Edukas tulevik",mat:"Paber, kuldne värv",steps:["Kujuta ette: blokaad on lahendatud.","Joonista, kuidas see tulevik välja näeb.","Kirjuta üks sõna, mis seda tulevikku iseloomustab."],refl:"Mida see tulevik sulle annab?"}
+];
+var c = document.getElementById('container');
+exs.forEach(function(ex, i) {
+  var pg = document.createElement('div');
+  pg.className = 'page ex-page';
+  var stepsHtml = ex.steps.map(function(s, si) {
+    return '<div class="ex-step"><div class="ex-step-n">'+(si+1)+'</div><p>'+s+'</p></div>';
+  }).join('');
+  pg.innerHTML =
+    '<div class="ex-header"><span class="ex-topic">🔓 Emotsionaalsed blokaadid</span><span class="ex-num">Harjutus '+(i+1)+' / 30</span></div>' +
+    '<div class="ex-title">'+ex.title+'</div>' +
+    '<div class="ex-mat"><strong>Vajad:</strong> '+ex.mat+'</div>' +
+    '<div class="ex-steps">'+stepsHtml+'</div>' +
+    '<div class="ex-space"></div>' +
+    '<div class="ex-refl"><div class="ex-refl-label">💭 Mõtisklus</div><p>'+ex.refl+'</p></div>';
+  c.appendChild(pg);
+});
+</script>
+</body>
+</html>
