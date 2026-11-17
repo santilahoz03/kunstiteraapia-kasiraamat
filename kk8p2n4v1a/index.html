@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Kunstiteraapia Käsiraamat — 100+ harjutust</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: 210mm 297mm; margin: 0; }
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #FFF8F4; --lav: #D9C9F7; --lavd: #B89FE0; --pink: #F3B8D2;
+  --title: #4E4036; --body: #6F6258; --body2: #8A7A70; --green: #5BAA7A;
+  --ft: 'Playfair Display',serif; --fb: 'Inter',sans-serif;
+}
+body { font-family: var(--fb); color: var(--body); background: var(--bg); }
+.page {
+  width: 210mm; min-height: 297mm; position: relative;
+  page-break-after: always; overflow: hidden;
+  padding: 0; display: flex; flex-direction: column;
+}
+/* COVER */
+.cover {
+  background: linear-gradient(160deg, #D9C9F7 0%, #F3B8D2 50%, #FFF8F4 100%);
+  align-items: center; justify-content: center; text-align: center;
+  padding: 40mm 20mm;
+}
+.cover-badge {
+  font-family: var(--fb); font-size: 10pt; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--lavd); background: rgba(255,255,255,.6);
+  padding: 6px 20px; border-radius: 20px; display: inline-block; margin-bottom: 24px;
+}
+.cover h1 { font-family: var(--ft); font-size: 36pt; color: var(--title); line-height: 1.2; margin-bottom: 12px; }
+.cover .subtitle { font-size: 13pt; color: var(--body); margin-bottom: 32px; line-height: 1.5; }
+.cover-pill {
+  display: inline-block; background: var(--title); color: #fff;
+  padding: 8px 24px; border-radius: 24px; font-size: 10pt; font-weight: 600; margin: 4px;
+}
+.cover-stars { font-size: 18pt; color: #C9A84C; letter-spacing: 4px; margin-top: 32px; }
+/* TOC */
+.toc-page { background: #fff; padding: 20mm 18mm; }
+.toc-title { font-family: var(--ft); font-size: 22pt; color: var(--title); margin-bottom: 8mm; border-bottom: 2px solid var(--lav); padding-bottom: 6mm; }
+.toc-theme { display: flex; justify-content: space-between; align-items: center; padding: 5mm 0; border-bottom: 1px solid #f0e8e0; }
+.toc-theme-left { display: flex; align-items: center; gap: 10px; }
+.toc-num { width: 28px; height: 28px; background: linear-gradient(135deg, var(--lav), var(--pink)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 10pt; color: var(--title); flex-shrink: 0; }
+.toc-name { font-size: 12pt; color: var(--title); font-weight: 600; }
+.toc-sub { font-size: 9pt; color: var(--body2); }
+.toc-count { font-size: 9pt; color: var(--lavd); font-weight: 600; }
+/* GUIDE */
+.guide-page { background: var(--bg); padding: 18mm 18mm; }
+.guide-h2 { font-family: var(--ft); font-size: 20pt; color: var(--title); margin-bottom: 6mm; }
+.guide-h3 { font-size: 11pt; font-weight: 700; color: var(--title); margin: 5mm 0 2mm; }
+.guide-p { font-size: 10pt; color: var(--body); line-height: 1.65; margin-bottom: 3mm; }
+.guide-ul { list-style: none; display: flex; flex-direction: column; gap: 3mm; margin: 3mm 0; }
+.guide-ul li { font-size: 10pt; color: var(--body); line-height: 1.5; padding-left: 14px; position: relative; }
+.guide-ul li::before { content: "✦"; position: absolute; left: 0; color: var(--lavd); font-size: 8pt; }
+.callout { border-radius: 10px; padding: 10px 14px; margin: 4mm 0; }
+.callout-ok { background: #e8f5ed; border-left: 3px solid var(--green); }
+.callout-note { background: #f0ebff; border-left: 3px solid var(--lavd); }
+.callout p { font-size: 9.5pt; color: var(--body); line-height: 1.6; }
+/* THEME INTRO */
+.theme-intro { align-items: center; justify-content: center; text-align: center; padding: 30mm 20mm; }
+.theme-intro-bg { position: absolute; inset: 0; opacity: .15; }
+.theme-intro-num { font-family: var(--ft); font-size: 72pt; font-weight: 900; color: var(--lavd); opacity: .2; position: absolute; top: 20mm; left: 18mm; line-height: 1; }
+.theme-intro-badge { display: inline-block; background: var(--lav); color: var(--title); font-size: 9pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 16px; }
+.theme-intro h2 { font-family: var(--ft); font-size: 30pt; color: var(--title); line-height: 1.3; margin-bottom: 12px; }
+.theme-intro p { font-size: 12pt; color: var(--body); line-height: 1.6; max-width: 140mm; margin: 0 auto 20px; }
+.theme-intro-count { font-size: 10pt; color: var(--lavd); font-weight: 700; }
+/* EXERCISE */
+.ex-page { background: #fff; padding: 14mm 18mm; }
+.ex-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6mm; padding-bottom: 4mm; border-bottom: 2px solid var(--lav); }
+.ex-topic { font-size: 8pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--lavd); }
+.ex-num { font-size: 8pt; color: var(--body2); }
+.ex-title { font-family: var(--ft); font-size: 18pt; color: var(--title); margin-bottom: 4mm; line-height: 1.3; }
+.ex-materials { display: flex; align-items: flex-start; gap: 8px; background: #f9f4ff; border-radius: 8px; padding: 6px 10px; margin-bottom: 5mm; font-size: 9pt; color: var(--body2); }
+.ex-materials span { font-weight: 700; color: var(--lavd); flex-shrink: 0; }
+.ex-steps { display: flex; flex-direction: column; gap: 3mm; margin-bottom: 5mm; }
+.ex-step { display: flex; gap: 10px; align-items: flex-start; }
+.ex-step-n { width: 20px; height: 20px; background: linear-gradient(135deg, var(--lav), var(--pink)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8pt; font-weight: 700; color: var(--title); flex-shrink: 0; margin-top: 1px; }
+.ex-step p { font-size: 10pt; color: var(--body); line-height: 1.55; }
+.ex-space { flex: 1; border: 1.5px dashed #d9c9f7; border-radius: 8px; margin: 3mm 0; }
+.ex-reflection { background: linear-gradient(135deg, #fef3f8, #f0ebff); border-radius: 8px; padding: 8px 12px; }
+.ex-reflection-label { font-size: 8pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--lavd); margin-bottom: 3px; }
+.ex-reflection p { font-size: 10pt; color: var(--title); font-style: italic; line-height: 1.5; }
+/* PRINT */
+@media print {
+  .no-print { display: none !important; }
+  .page { page-break-after: always; }
+}
+/* SCREEN */
+@media screen {
+  body { background: #e0d8d0; padding: 20px; }
+  .page { margin: 0 auto 20px; box-shadow: 0 4px 20px rgba(0,0,0,.2); }
+  .print-btn { position: fixed; bottom: 24px; right: 24px; background: var(--lavd); color: #fff; border: none; border-radius: 50px; padding: 14px 28px; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 16px rgba(184,159,224,.5); z-index: 1000; }
+}
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">🖨️ Prindi / Salvesta PDF</button>
+
+<!-- COVER -->
+<div class="page cover">
+  <div class="cover-badge">✦ Digitaalne · Kohene juurdepääs · Prinditav</div>
+  <h1>Kunstiteraapia<br>Käsiraamat</h1>
+  <p class="subtitle">100+ juhendatud harjutust emotsionaalseks väljenduseks,<br>sisemiseks kasvuks ja vaimseks heaoluks</p>
+  <div>
+    <span class="cover-pill">🎨 10 teemat</span>
+    <span class="cover-pill">📖 100+ harjutust</span>
+    <span class="cover-pill">✍️ Ilma eelteadmisteta</span>
+  </div>
+  <div class="cover-stars">★★★★★</div>
+</div>
+
+<!-- TOC -->
+<div class="page toc-page">
+  <div class="toc-title">📋 Sisukord</div>
+  <div class="toc-theme"><div class="toc-theme-left"><div class="toc-num">1</div><div><div class="toc-name">Emotsioonid</div><div class="toc-sub">Tunnete tundmaõppimine ja väljendamine</div></div></div><div class="toc-count">10 harjutust</div></div>
+  <div class="toc-theme"><div class="toc-theme-left"><div class="toc-num">2</div><div><div class="toc-name">Stress ja rahustamine</div><div class="toc-sub">Pinge vabastamine ja tasakaalu leidmine</div></div></div><div class="toc-count">10 harjutust</div></div>
+  <div class="toc-theme"><div class="toc-theme-left"><div class="toc-num">3</div><div><div class="toc-name">Identiteet</div><div class="toc-sub">Kes ma olen — enesetundmine ja enesemääratlus</div></div></div><div class="toc-count">11 harjutust</div></div>
+  <div class="toc-theme"><div class="toc-theme-left"><div class="toc-num">4</div><div><div class="toc-name">Loovus ja väljendus</div><div class="toc-sub">Loominguline energia ja eneseväljendus</div></div></div><div class="toc-count">10 harjutust</div></div>
+  <div class="toc-theme"><div class="toc-theme-left"><div class="toc-num">5</div><div><div class="toc-name">Suhted ja ühendus</div><div class="toc-sub">Suhted enda ja teistega</div></div></div><div class="toc-count">10 harjutust</div></div>
+  <div class="toc-theme"><div class="toc-theme-left"><div class="toc-num">6</div><div><div class="toc-name">Minevik ja andestamine</div><div class="toc-sub">Mineviku töötlemine ja vabanemine</div></div></div><div class="toc-count">10 harjutust</div></div>
+  <div class="toc-theme"><div class="toc-theme-left"><div class="toc-num">7</div><div><div class="toc-name">Tulevik ja unistused</div><div class="toc-sub">Tuleviku kujutamine ja eesmärkide seadmine</div></div></div><div class="toc-count">11 harjutust</div></div>
+  <div class="toc-theme"><div class="toc-theme-left"><div class="toc-num">8</div><div><div class="toc-name">Enesehinnang</div><div class="toc-sub">Enese väärtustamine ja kindlustamine</div></div></div><div class="toc-count">10 harjutust</div></div>
+  <div class="toc-theme"><div class="toc-theme-left"><div class="toc-num">9</div><div><div class="toc-name">Rahu ja olemine</div><div class="toc-sub">Sisemise rahu leidmine ja hoidmine</div></div></div><div class="toc-count">10 harjutust</div></div>
+  <div class="toc-theme"><div class="toc-theme-left"><div class="toc-num">10</div><div><div class="toc-name">Kasv ja uuenemine</div><div class="toc-sub">Muutus, areng ja uued algused</div></div></div><div class="toc-count">11 harjutust</div></div>
+  <div style="margin-top:8mm;background:linear-gradient(135deg,#f0ebff,#fef3f8);border-radius:12px;padding:12px 16px;">
+    <p style="font-size:9pt;color:var(--body);line-height:1.6;"><strong style="color:var(--title);">Kuidas kasutada?</strong> Leia teema, mis kõnetab sind täna. Vali harjutus. Valmista ette paber ja pliiats. Järgi juhiseid omas tempos. Pole vaja kunstikogemust — ainult soov olla hetkes kohal.</p>
+  </div>
+</div>
+
+<!-- HOW TO USE -->
+<div class="page guide-page">
+  <h2 class="guide-h2">Kuidas seda käsiraamatut kasutada</h2>
+  <p class="guide-p">Kunstiteraapia Käsiraamat on mõeldud igaühele — olenemata kunstikogemusest. Küsimus ei ole täiusliku kunstiteos loomises, vaid loomingulise väljenduse kasutamises enda mõistmiseks.</p>
+  <h3 class="guide-h3">Algajale</h3>
+  <ul class="guide-ul">
+    <li>Alusta mõnest teemast, mis sind praegu puudutab</li>
+    <li>Tee üks harjutus päevas — 10–20 minutit on piisav</li>
+    <li>Ära hinda oma tulemust — protsess on tähtsam</li>
+    <li>Kui jooksed kokku, loe lihtsalt juhiseid uuesti</li>
+  </ul>
+  <h3 class="guide-h3">Professionaalile</h3>
+  <ul class="guide-ul">
+    <li>Kasuta harjutusi individuaalsetes sessioonides kui loomingulisi impulsse</li>
+    <li>Rühmatöös vali harjutused, mis sobiksid kõigile osalejatele</li>
+    <li>Boonus 5 (Rakendamise juhendmaterjal) sisaldab täiendavaid näpunäiteid</li>
+  </ul>
+  <h3 class="guide-h3">Vajaminevad materjalid</h3>
+  <ul class="guide-ul">
+    <li>Tühjad paberilehed (A4 sobib hästi)</li>
+    <li>Pliiats, pastapliiats või tuššpliiats</li>
+    <li>Vabatahtlik: värvipliiatsid, tušid, vesivärv, ajakirjalehtedest väljalõigete jaoks käärid ja liim</li>
+  </ul>
+  <div class="callout callout-ok">
+    <p>✦ <strong>Mäleta:</strong> Kunstiteraapia ei nõua kunsti tegemist. See nõuab ainult soovi olla aus iseendaga. Väär vastus puudub.</p>
+  </div>
+  <div class="callout callout-note">
+    <p>📌 Prindi välja lehed, mida tahad täita. Võid ka lihtsalt lugeda harjutust ekraanilt ja teha see eraldi paberile.</p>
+  </div>
+</div>
+
+<div id="ex-container"></div>
+
+<script>
+var THEMES = [
+  {
+    num: 1, name: "Emotsioonid", icon: "🌊",
+    desc: "Emotsioonid on meie sisemise maailma keel. Nende tundmine ja väljendamine on vaimse tervise alus.",
+    exercises: [
+      {title:"Emotsionaalne prognoos",mat:"Paber, värvipliiatsid",steps:["Mõtle oma praegusele emotsionaalsele seisundile.","Joonista ilmastikukaart (päike, pilved, vihm, torm, lumi) mis kujutaks sinu tunnetega tänase päeva.","Lisa igas piirkonnas väike märkus: mida see ilm sinu jaoks tähendab?"],refl:"Milline ilmastik iseloomustab kõige paremini su praegust sisemist seisundit?"},
+      {title:"Värvuste keeleõpe",mat:"Paber, värvipliiatsid või tušid",steps:["Joonista 7 ringi lehele.","Vali iga ringi jaoks värv, mis esindab ühte tunnet (nt rõõm = kollane, kurbus = sinine).","Kirjuta ringi sisse tunne ja mis selle tekitab."],refl:"Millist värvi valiksid oma praeguse elu üldise tooni jaoks?"},
+      {title:"Tunnete liblikas",mat:"Paber, värvipliiatsid",steps:["Joonista liblikas.","Vasak tiib = positiivsed tunded, mida täna koged.","Parem tiib = negatiivsed tunded, mida täna koged.","Iga tunde jaoks pane oma värv."],refl:"Milline tiib on täna suurem? Mida see sinu kohta ütleb?"},
+      {title:"Emotsionaalne mosaiik",mat:"Ajakirjad, käärid, liim, paber",steps:["Lõika ajakirjadest välja värvid, kujundid ja pildid, mis vastavad sinu praegustele tunnetele.","Kleebi need A4 lehele.","Vaata tulemust — mis muster tekib?"],refl:"Kas mosaiik on harmooniline või vastuoluline? Mida see sulle räägib?"},
+      {title:"Rõõmu kaart",mat:"Paber, pliiats",steps:["Joonista ringi keskel 'Mina'.","Joonista jooned, mis viivad erinevatesse aladesse: perekond, töö, hobid, loodus, inimesed.","Iga joone lõpus kirjuta üks asi, mis toob sulle rõõmu selles valdkonnas."],refl:"Kust tuleb sinu elus kõige rohkem rõõmu? Kuidas saaksid seda rohkem?"},
+      {title:"Kurbus kujundina",mat:"Paber, pliiats",steps:["Luba endale 2 minutit tunda kurbust, mis sul praegu on (suur või väike).","Joonista see kurbus kujundina — see võib olla abstraktne.","Lisage detaile: tekstuur, kaal, temperatuur."],refl:"Mida kurbus sinult vajab? Mida ta sulle ütleb?"},
+      {title:"Viha väljendus",mat:"Paber, tugevad pliiatsid",steps:["Mõtle millelegi, mis sind vihastab.","Lase käel liikuda — kriipsuta, surusuruta, joonista kiirete, jõuliste liigutustega.","Ära mõtle 'ilus' — väljenda energiat."],refl:"Kuidas tunneb su keha pärast seda harjutust? Mis juhtus vihaga?"},
+      {title:"Hirmu väljendamine",mat:"Paber, värvipliiatsid",steps:["Kirjuta üles üks asi, mida praegu kardad.","Joonista selle hirmu kujund — suur või väike, nagu ise sobib.","Nüüd joonista kõrvale midagi, mis annab sulle jõudu."],refl:"Kas hirm näib väiksem, kui ta on vormina paberil?"},
+      {title:"Rahulolu rituaal",mat:"Paber, pliiats",steps:["Mõtle kolmele asjale, mis sind täna rahulolevaks tegid (väga väikesed ka sobivad).","Joonista iga asi kujundina — lill, täht, südame.","Lisage detaile, mis teevad kujundi unikaalseks."],refl:"Kuidas tunneb su keha, kui vaatad neid kolme kujundit?"},
+      {title:"Tundemaailma teekond",mat:"Paber, värvipliiatsid",steps:["Joonista mäed, orud ja tasandikud — maastik.","Märgi erinevatesse kohtadesse, kus sa oled olnud emotsionaalselt (mägi = kõrge energia, org = raske periood).","Kuhu oled praegu jõudnud?"],refl:"Mida maastik sinu emotsionaalsest teekonnast räägib?"}
+    ]
+  },
+  {
+    num: 2, name: "Stress ja rahustamine", icon: "🌿",
+    desc: "Stress on keha signaal. Kunstiteraapia aitab seda signaali kuulda, mõista ja vabastada.",
+    exercises: [
+      {title:"Stressivastased pallid",mat:"Paber, pliiats",steps:["Joonista 5 palli.","Kirjuta igasse üks stressiallikas, mis su elus praegu on.","Värvige pallid vastavalt nende koormusele (suurem stress = tumedam värv)."],refl:"Milline pall tundub kõige raskem? Mida saaksid teha, et see kergem oleks?"},
+      {title:"Vabanemise jõgi",mat:"Paber, sinine/turkoosne pliiats",steps:["Joonista voolav jõgi.","Kirjuta lainete sisse asjad, millest tahad vabaneda (mured, hirmud, halvad harjumused).","Kujuta ette, kuidas vesi need endaga minema viib."],refl:"Kuidas tunneb su keha, kui kujutad ette, et jõgi viib nende asjad ära?"},
+      {title:"Hinge hingamine",mat:"Paber, värvipliiatsid",steps:["Tee 3 sügavat hingetõmmet.","Pärast igat hingetõmmet joonista, kuidas see hingeõhk sinu kehas liigub.","Kasuta erinevaid värve sisse- ja väljahingatavate õhuvoogude jaoks."],refl:"Mida see harjutus muutis sinu keha- ja vaimutundes?"},
+      {title:"Pinge kaardistamine",mat:"Paber, pliiats",steps:["Joonista oma keha siluett (lihtne kuju piisab).","Märgi punaste täppidega, kus sa tunnid pinget oma kehas praegu.","Joonista siniste lainetena üle nende kohtade, kujutades rahu."],refl:"Kus peitub su kehas kõige rohkem pinget? Miks just seal?"},
+      {title:"Rahuliku paiga loomine",mat:"Paber, värvipliiatsid",steps:["Mõtle oma ideaalsele rahulikule paigale — päris või kujuteldav.","Joonista see paik nii üksikasjalikult kui soovid.","Lisa helidele, lõhnadele ja tunnetele vastavad visuaalsed elemendid."],refl:"Mida tunneksid, kui oleksid nüüd selles paigas?"},
+      {title:"Pilvede lahtilasskmine",mat:"Paber, värvipliiatsid",steps:["Joonista taevas pilvedega.","Kirjuta igasse pilve üks mure või raskus.","Kujuta ette tuult, mis viib pilved ära — joonista selge taevas."],refl:"Mis jääb järele, kui pilved on läinud?"},
+      {title:"Jõu allikas",mat:"Paber, roheline pliiats",steps:["Joonista allikas, kust voolab puhas vesi.","Iga veejuga esindab ühte jõuallikat sinu elus.","Kirjuta iga joa kõrvale, mis see allikas on."],refl:"Millisest allikast saad täna kõige rohkem jõudu?"},
+      {title:"Aja liivakell",mat:"Paber, pliiats",steps:["Joonista suur liivakell.","Ülemises osas: kirjuta, mis sul minevikust veel järel on.","Alumises osas: kirjuta, mida soovid tulevikku suunata."],refl:"Mida tahaksid praeguses hetkes — täpselt liivakella keskel — täielikult elada?"},
+      {title:"Rahuvärvimine",mat:"Mustvalge prinditud muster (nt mandala) või tühi paber",steps:["Joonista korduv muster või laadi alla mandala.","Värvi see aeglaselt, ilma eesmärgita, ainult hetkes olles.","Lase käel liikuda ilma juhtimata."],refl:"Mida märkasid oma mõtetes selle harjutuse ajal?"},
+      {title:"Heaolu termostat",mat:"Paber, pliiats",steps:["Joonista termostaadi skaala (0–10).","Märgi oma praegune heaolu tase.","Kirjuta üks asi, mis tõstaks seda ühegi punkti võrra."],refl:"Mis on praegu kõige väiksem asi, mis parandaks sinu heaolu?"}
+    ]
+  },
+  {
+    num: 3, name: "Identiteet", icon: "🪞",
+    desc: "Kes ma olen? See küsimus on elu suurimaid. Kunstiteraapia aitab vastust otsida visuaalselt.",
+    exercises: [
+      {title:"Enese portree tunnetest",mat:"Paber, värvipliiatsid",steps:["Joonista oma portree — aga mitte välimuse järgi.","Joonista seda, kuidas TUNNED end seestpoolt.","Kasuta kujundeid, värve ja vorme."],refl:"Mida portree sinu kohta ütleb, mida sõnadega ei oska väljendada?"},
+      {title:"Minu mitu nägu",mat:"Paber, pliiats",steps:["Joonista 4 kasti.","Igas kastis: milline sa oled tööl, kodus, üksi, sõpradega.","Kirjuta iga rolli juurde 3 omadust."],refl:"Milline neist neljast rollist tunned end kõige rohkem 'iseendana'?"},
+      {title:"Juurte puu",mat:"Paber, pruun ja roheline pliiats",steps:["Joonista suur puu.","Juured: kust sa tuled (perekond, kultuur, kogemused).","Tüvi: kes sa praegu oled.","Oksad: milleks sa soovid kasvada."],refl:"Kuivõrd tunned oma juuri? Kas need toetavad sind?"},
+      {title:"Minu lugu kollaažis",mat:"Ajakirjad, käärid, liim, paber",steps:["Lõika pildid ja sõnad, mis iseloomustavad sinu lugu kuni täna.","Paiguta need kronoloogiliselt või emotsionaalselt.","Pealkirjasta kollaž."],refl:"Millise pealkirja annaksid oma loo sellele peatükile?"},
+      {title:"Väärtuste kompass",mat:"Paber, pliiats",steps:["Joonista kompass nelja ilmakaare suunaga.","Iga ilmakaare juurde kirjuta üks väärtus, mis on sinu elus kõige tähtsam.","Märgi, millist väärtust elad täna kõige rohkem."],refl:"Kas su elu suund on kooskõlas su väärtustega?"},
+      {title:"Enesearmastuse päevalill",mat:"Paber, värvipliiatsid",steps:["Joonista päevalill.","Iga kroonleht: üks asi, mida armastad enda juures.","Keskel: kirjuta oma nimi."],refl:"Kuidas tunnet, kui kirjutad need asjad üles? Kas on lihtne või raske?"},
+      {title:"Minu ressursid",mat:"Paber, pliiats",steps:["Joonista seljakott.","Täida see kujunditega, mis esindavad sinu tugevusi, oskusi ja ressursse.","Mida kannad endaga alati kaasas?"],refl:"Milline ressurss on sinul kõige võimsam, aga millest sa ei räägi?"},
+      {title:"Muutuste joon",mat:"Paber, pliiats",steps:["Joonista horisontaalne joon — sinu elutelg.","Märgi kõrgemad punktid (suurepärased hetked) ja madalamad punktid (rasked ajad).","Vaata mustrit."],refl:"Mida näed oma elujoonel, mida enne polnud märganud?"},
+      {title:"Minu piirid",mat:"Paber, värvipliiatsid",steps:["Joonista ringi 'mina' keskel.","Ringi sees: inimesed, kellele lased oma sisemaailma.","Ringi väljas: inimesed, kellest hoiad distantsi.","Märgi piir lihtsalt, ilma hinnanguteta."],refl:"Kas su piirid on praegu sellised, nagu soovid?"},
+      {title:"Unustatud mina",mat:"Paber, pliiats",steps:["Mõtle kellestki, keda olid lapsena — unistused, huvid, omadused.","Joonista see laps.","Kirjuta kõrvale: mida ta ütleks sinule praegu?"],refl:"Milline osa sinust on jäänud täiskasvanueas elades 'unustamata'?"},
+      {title:"Autoportree tulevikust",mat:"Paber, värvipliiatsid",steps:["Kujuta ette, et oled 5 aastat edasi arenenud.","Joonista autoportree sellest inimesest.","Kirjuta kõrvale: milline see inimene on?"],refl:"Mida peaksid hakkama tegema, et selleks inimeseks saada?"}
+    ]
+  },
+  {
+    num: 4, name: "Loovus ja väljendus", icon: "🎨",
+    desc: "Loovus on meie loomuse osa. Kunstiteraapia aitab seda ressurssi avada ja kasutada.",
+    exercises: [
+      {title:"Vaba jooneharjutus",mat:"Paber, pliiats",steps:["Lase käel liikuda ilma mõtlemata — 3 minutit.","Ei pea olema kaunis ega mõtestatud.","Vaata, mis on tekkinud."],refl:"Mis kujundid või jooned tekkisid iseenesest? Mida need sulle meenutavad?"},
+      {title:"Värvide muusika",mat:"Paber, värvipliiatsid",steps:["Mängi (või kujuta ette) üks lemmiklugu.","Värvige paberit nii, nagu muusika liigub — rütm, toon, energia.","Ei pea olema 'õige' — ainult tunne."],refl:"Milliseid värve ja liigutusi valis su käsi?"},
+      {title:"Tekstuuri uurimine",mat:"Erinevad materjalid (paber, tekstiil, foolium jne)",steps:["Koguge 5 erinevat tekstuuriga materjali.","Kandke värviga iga materjali jälg paberile.","Loodage kollaaž tekstuuridest."],refl:"Milline tekstuur tunnetab kõige rohkem nagu sa ise?"},
+      {title:"Pildijärgse loo",mat:"Ajakirja pilt, paber, pliiats",steps:["Lõika ajakirjast üks pilt, mis sind tõmbab.","Kleebi see lehe keskele.","Joonista ümber sellele — mis toimus enne ja pärast?"],refl:"Miks just see pilt sind tõmbas?"},
+      {title:"Abstraktne eneseväljendus",mat:"Paber, tušid või varvid",steps:["Mõtle ühele sõnale, mis iseloomustab sinu tänast päeva.","Joonista see sõna — aga mitte tähtedena, vaid kujundite ja värvidena.","Kasutage paksuseid, kiirust ja kontrastsust."],refl:"Kuidas erineb see kujund sellest sõnast, mida tavaliselt kasutad?"},
+      {title:"Mittetäiuslikkuse kunst",mat:"Paber, pliiats",steps:["Joonista midagi 'valesti' tahtlikult — krivased jooned, ebaühtlane muster.","Jätka maalimist ilma parandamata.","Leidke ilu ebatäiuslikkuses."],refl:"Mis juhtus, kui lasid endale loa teha 'valesti'?"},
+      {title:"Laste joonistus",mat:"Paber, värvipliiatsid",steps:["Joonista midagi nii, nagu joonistaksid 6-aastasena.","Lihtsad kujundid, selged värvid, naiivsus.","Kirjuta pealkirjaks: 'Minu maailm'."],refl:"Milline tunne on maalida nagu laps?"},
+      {title:"Peegli harjutus",mat:"Kaks paberit, pliiats",steps:["Joonista midagi parema käega.","Joonista täpselt sama asi vasaku käega (või vastupidi).","Võrdle tulemusi."],refl:"Mida tugevam ja nõrgem käsi õpetas sulle?"},
+      {title:"Improvisatsiooni kaart",mat:"Paber, värvipliiatsid",steps:["Sea taimer 1 minutiks.","Joonista kiiresti — ära peatugi.","Korda 5 korda erinevate värvidega."],refl:"Millised kujundid tekivad siis, kui sul pole aega mõelda?"},
+      {title:"Tänulooming",mat:"Paber, värvipliiatsid",steps:["Mõtle kolmele asjale, mille eest oled täna tänulik.","Joonista iga asi ühe kujundiga.","Kirjuta kõrvale ühesõnaline kirjeldus."],refl:"Kuidas muutus sinu meeleolu selle harjutuse ajal?"}
+    ]
+  },
+  {
+    num: 5, name: "Suhted ja ühendus", icon: "🤝",
+    desc: "Suhted on meie elu tähenduse allikas. Kunstiteraapia aitab kaardistada, mõista ja hoolida.",
+    exercises: [
+      {title:"Suhtekaart",mat:"Paber, värvipliiatsid",steps:["Kirjuta oma nimi lehekeskel.","Joonista jooni erinevatele inimestele oma elus.","Paksus joon = tugev suhe, õhuke joon = nõrgem suhe."],refl:"Millise suhtega soovid end täna rohkem tegeleda?"},
+      {title:"Tänukirja kujund",mat:"Paber, pliiats",steps:["Mõtle ühele inimesele, kellele oled tänulik.","Joonista kujund, mis sümboliseerib seda inimest.","Kirjuta kujundi sisse, mida nad sulle andnud on."],refl:"Kas oled kunagi sellele inimesele öelnud, mida nad su jaoks tähendavad?"},
+      {title:"Vastuolu maastik",mat:"Paber, pliiats",steps:["Mõtle suhtes, kus on praegu vastuolu.","Joonista see vastuolu maastikuna (kaljud, sein, lõhe jne).","Joonista kõrvale sild või tee, mis aitaks ületada."],refl:"Mis samm oleks kõige väiksem, et see sild ehitada?"},
+      {title:"Perede muster",mat:"Paber, värvipliiatsid",steps:["Joonista oma perekonnakujundid (kõigil erinev vorm).","Paiguta nad paberile nii, nagu nad emotsionaalselt asetsevad.","Märgi joontega, millistel suhetel on tugevamaid ühendusi."],refl:"Mida märkad perekonna mustrist, mida pole varem teadvustanud?"},
+      {title:"Ühise ruumi kaart",mat:"Paber, kaks eri värvi pliiatsit",steps:["Vali keegi, kellega jaga oma elu (partner, sõber, pereliige).","Ühe värviga: joonista, mida sina sinna suhtesse tood.","Teise värviga: joonista, mida nemad toovad."],refl:"Kus kattuvad teie värvid? Kus on ruumi rohkemaks?"},
+      {title:"Piiride joonistamine",mat:"Paber, pliiats",steps:["Joonista ringi keskel 'mina'.","Joonista piirid, mis tunned et vajavad sinu elus selgust.","Märgi, mis on ringi sees (sinu oma ruum) ja väljaspool (teiste ruum)."],refl:"Kas su praegused piirid kaitsevad sind või sulgevad sind?"},
+      {title:"Andestamise rituaal",mat:"Paber, kaks eri värvi pliiatsit",steps:["Joonista kellegi inimese portree (abstraktselt), kellele tahad andestada.","Lisage ümber kujunditega kogu see, mida nemad sulle tegid.","Nüüd joonista valgust — kujuta andestuse sümboli."],refl:"Kuidas tunneksid ennast, kui andestus oleks täielik?"},
+      {title:"Toetuse võrgustik",mat:"Paber, värvipliiatsid",steps:["Joonista võrk — spinneri stiilis ringid üksteise sees.","Keskel: sina.","Esimene ring: inimesed, kelle poole pöördud kriisis.","Teine ring: igapäevased toetajad.","Kolmas ring: inspeerijad."],refl:"Kas su võrgustik on piisavalt tugev? Millises ringis on puudu?"},
+      {title:"Heateo kujund",mat:"Paber, pliiats",steps:["Mõtle kõige positiivsemale asjale, mida oled hiljuti kellegi teise jaoks teinud.","Joonista see tegu kujundina.","Kirjuta kõrvale, kuidas see tundus."],refl:"Kuidas mõjutab teiste aitamine sinu enda heaolu?"},
+      {title:"Ühenduse sümbol",mat:"Paber, värvipliiatsid",steps:["Mõtle kellestki, kellega tunnete sügavat sidet.","Joonista sümbol, mis kujutab teie sidet.","Kirjuta üks sõna, mis seda suhet iseloomustab."],refl:"Mida see side annab sulle, mida ei saa teistelt?"}
+    ]
+  },
+  {
+    num: 6, name: "Minevik ja andestamine", icon: "🍂",
+    desc: "Minevik ei ole vanglaks. Kunstiteraapia aitab töödelda, mõista ja vabastada.",
+    exercises: [
+      {title:"Vana haav",mat:"Paber, värvipliiatsid",steps:["Mõtle ühele vanale haavale — mineviku kogemusele, mis veel valutab.","Joonista see haav abstraktselt.","Nüüd joonista kõrvale — kuidas see on ajas paranenud."],refl:"Kas haav on paranenud või avatud? Mida vajab, et paraneda?"},
+      {title:"Muutuste joon",mat:"Paber, pliiats",steps:["Joonista ajajoon oma elu oluliste muutustega.","Märgi iga muutuse juurde: milline loom, lill või ilm see oli?","Millised muutused olid hirmutavad alguses, aga head lõpus?"],refl:"Mida õpetasid sulle need muutused?"},
+      {title:"Kollaažiga lugu",mat:"Ajakirjad, käärid, liim, paber",steps:["Loo kollaažis üks hetk minevikust, mida tahad meenutada positiivselt.","Vali pildid, värvid ja sõnad, mis iseloomustavad seda hetke.","Pealkirjasta."],refl:"Mida see hetk sulle andis?"},
+      {title:"Lahtilasskmine",mat:"Vesi, värvipliiatsid, märg paber",steps:["Kirjuta märjale paberile miski, millest tahad lahti lasta.","Lase värvil laiali valguda — vaata, kuidas see hägustub.","Kirjuta peale uus sõna: vabadus."],refl:"Mida tunneksid, kui läheksid selle täielikult lahti?"},
+      {title:"Tänukirjad minevikule",mat:"Paber, pliiats",steps:["Kirjuta lühike tänukiri ühele raskele kogemusele minevikust.","Mida ta sulle andis? Mida sa õppisid?","Joonista kõrvale sümbol sellele kogemusele."],refl:"Kuidas muutub kogemus, kui vaatad seda tänumeelega?"},
+      {title:"Kellavõru",mat:"Paber, pliiats",steps:["Joonista kellakell, mis kujutab su elu ajakava.","Millised hetked täidavad kõige rohkem sinu mälu?","Värvige positiivsed momendid soojalt, raskemad külmemalt."],refl:"Milline ajavahemik on sinu elus kõige rikkam?"},
+      {title:"Muutuse lõng",mat:"Lõng või paber, värvipliiatsid",steps:["Mõtle ühele harjumusele, käitumisviisile või uskomusele, mida tahad muuta.","Joonista see lõngana — sassis või keeruline.","Joonista kõrvale, kuidas lõng lahti hargneb."],refl:"Mis samm on esimene selle lõnga lahtiharutamisel?"},
+      {title:"Hallide pilvedega torm",mat:"Paber, hall ja valge pliiats",steps:["Joonista torm.","Nüüd joonista päike, mis tuleb pärast tormi.","Kirjuta pilve sisse: millise tormi sa läbi elasid?","Päikese kiirgustesse: mida see torm sulle andis?"],refl:"Milliseid tugevusi avastasid endas läbi selle tormi?"},
+      {title:"Vana foto mälestusse",mat:"Paber, värvipliiatsid",steps:["Mõtle vanale fotole, mis sul on (või kujuta ette).","Joonista seda fotot sellest, mis tunnetega see seostub — mitte faktidega.","Värvige ja lisage detaile."],refl:"Mida tahaksid öelda sellele inimesele fotol?"},
+      {title:"Uued lehed puu küljes",mat:"Paber, roheline ja pruun pliiats",steps:["Joonista puu koos okste ja lehtedega.","Kuivanud oksad = kogemused, mis on teinud su tugevamaks.","Uued lehed = uued algused, mis sinust kasvavad."],refl:"Millised uued lehed hakkavad praegu kasvama?"}
+    ]
+  },
+  {
+    num: 7, name: "Tulevik ja unistused", icon: "⭐",
+    desc: "Tulevik on võimaluste ruum. Kunstiteraapia aitab seda ruumi kujutada ja sellele liikuda.",
+    exercises: [
+      {title:"Unistuste kaart",mat:"Suur paber, värvipliiatsid, ajakirjad",steps:["Joonista oma unistuste maailm 5 aasta pärast.","Lisage pildid, värvid, sõnad, kujundid.","Pole piiranguid — ainult unistamine."],refl:"Millised unistused olid raskeim lahti joonistada? Miks?"},
+      {title:"Üks aasta tulevikus",mat:"Paber, pliiats",steps:["Kujuta ette: on 17.11.2027. Oled väga rahul.","Joonista, kus sa oled. Kes su ümber on. Mida teed.","Kirjuta 5 asja, mis on muutunud."],refl:"Mis samm täna viib sind selle pildini lähemale?"},
+      {title:"Hirmudeta tulevik",mat:"Paber, värvipliiatsid",steps:["Mõtle oma suurimale hirmule tuleviku ees.","Joonista, mis juhtuks, kui seda hirmu EI OLEKS.","Värvige see tulevik eredalt."],refl:"Mida takistab sul juba täna niiviisi elada?"},
+      {title:"Eesmärkide puu",mat:"Paber, värvipliiatsid",steps:["Joonista puu.","Juured: millised väärtused toetavad su eesmärke.","Tüvi: su suurim eesmärk.","Oksad: sammud selle eesmärgi poole.","Lehed: väiksed tegevused, mida saad kohe teha."],refl:"Millist lehte saad täna 'kasvatada'?"},
+      {title:"Teekond kaardistatuna",mat:"Paber, pliiats",steps:["Joonista kaart oma teekonnast praegusest punktist suurima eesmärgini.","Märgi takistused, pöördepunktid, lühiteed.","Joonista X, kus sa praegu oled."],refl:"Millisest teekonnast tunned end kõige rohkem innustunud?"},
+      {title:"Positiivne visandamine",mat:"Paber, värvipliiatsid",steps:["Mõtle ühele muutusele, mida soovid ellu viia.","Joonista iga samm selle muutuse tegemiseks kui üks kujund.","Ühendage kujundid joontega."],refl:"Millise kujundini on kõige raskem jõuda? Miks?"},
+      {title:"Oma loo pealkiri",mat:"Paber, pliiats",steps:["Kujuta ette raamatut oma elust.","Kirjuta pealkiri selle peatükile, mida sa praegu elad.","Joonista kaas sellele raamatule."],refl:"Mida tahaksid, et selle peatüki pealkiri oleks?"},
+      {title:"Positiivne manteel",mat:"Paber, värvipliiatsid",steps:["Joonista manteel enda ümber.","Kirjuta mantelisse kõik tugevused ja väärtused, mis sind katavad.","Värvige see kaitsev manteel."],refl:"Millised tugevused tunned, et on praegu kõige olulisemad?"},
+      {title:"Muutus südames",mat:"Paber, värvipliiatsid",steps:["Joonista süda.","Vasak pool: kes sa oled praegu.","Parem pool: kelleks tahad saada.","Keskel: mis on mõlemal ühine."],refl:"Millised tuumik-väärtused on mõlemas pooles?"},
+      {title:"Tänu tuleviku minale",mat:"Paber, pliiats",steps:["Kirjuta lühike tänukiri oma tuleviku 'minale' 5 aasta pärast.","Tänab praegune mina tuleviku minat selle eest, mis sul on siis.","Joonista kõrvale sümbol."],refl:"Mida see harjutus sulle paljastas?"},
+      {title:"Uue alustu üks samm",mat:"Paber, pliiats",steps:["Mõtle millelegi, mida oled pikka aega tahtnud alustada.","Joonista ainult ESIMENE SAMM — väga konkreetne.","Kirjuta see samm võimalikult väikseks."],refl:"Millal saad teha selle esimese sammu?"}
+    ]
+  },
+  {
+    num: 8, name: "Enesehinnang", icon: "💜",
+    desc: "Enesehinnang on meie suhte iseendaga alus. Kunstiteraapia aitab seda ehitada ja tugevdada.",
+    exercises: [
+      {title:"Hea minust",mat:"Paber, värvipliiatsid",steps:["Joonista ringi, mis kujutab sind.","Kirjuta ringi sisse kõik asjad, mis sind teeb väärtuslikuks.","Lisage värve, mis tähistavad iga omadust."],refl:"Kuidas tunneb su keha, kui loed need omadused läbi?"},
+      {title:"Superkangelane",mat:"Paber, värvipliiatsid",steps:["Joonista oma superkangelase versioon — aga see on SINA.","Millised superomadused sul on?","Anna superkangelasele nimi ja sümboolne rõivastus."],refl:"Milliseid oma superomadusi kasutad kõige rohkem?"},
+      {title:"Komplimendide kaart",mat:"Paber, pliiats",steps:["Kirjuta 7 komplimenti iseendale — nii, nagu kirjutaksid parimale sõbrale.","Joonista igaühe juurde väike südame.","Loe need valjusti."],refl:"Mida tunnete, kui räägite iseendaga nii heasoovlikult?"},
+      {title:"Saavutuste riiulid",mat:"Paber, pliiats",steps:["Joonista raamariiuli.","Iga riiul = üks eluperiood.","Raamatute seljas: su saavutused sellest perioodist."],refl:"Millist raamatut oled kõige uhke?"},
+      {title:"Sisemise kriitiku vaigistamine",mat:"Paber, kaks pliiatsit",steps:["Joonista sisemine kriitik — kujundina.","Nüüd joonista sisemine treener/toetaja kujund.","Mis sõnadega räägib treener vs. kriitik?"],refl:"Kumba hääl on sinu elus domineerivam?"},
+      {title:"Jõu allikas endas",mat:"Paber, värvipliiatsid",steps:["Joonista allikas, mis voolab sinu seest.","Allikasse kirjuta omadused ja ressursid, mis sul juba on.","Värvige eredad, selged värvid."],refl:"Milliseid ressursse ignoreerid endas?"},
+      {title:"Positiivse peegelpildi",mat:"Paber, pliiats",steps:["Joonista peegel.","Kirjuta peeglisse 5 asja, mida inimesed, kes sind teavad, hindavad sinus.","Lisage üks, mida ise enda juures hindad."],refl:"Kas see, mida teised sinus näevad, vastab sellele, mida ise näed?"},
+      {title:"Lahket enesehaletsust",mat:"Paber, värvipliiatsid",steps:["Mõtle millelegi, mille pärast tunnet end süüdi.","Joonista süüd kujundina.","Nüüd joonista lahked käed, mis seda kujundit hoiavad."],refl:"Mida ütleksid sellele kujundile, et anda suurem enesekaastunne?"},
+      {title:"Minu edusammud",mat:"Paber, pliiats",steps:["Joonista redel.","Iga pulk = üks edusamm viimaste kuude jooksul (väga väiksed arvestatavad).","Värvige iga pulk erinevalt."],refl:"Mitu pulka oled juba üles roninud?"},
+      {title:"Sisemine kodu",mat:"Paber, värvipliiatsid",steps:["Joonista maja.","Iga tuba = üks osa sinust (loov tuba, hooliv tuba, tugev tuba jne).","Kujuta iga tuba nii, nagu see praegu tunneb."],refl:"Millist tuba vajab kõige rohkem armastust ja tähelepanu?"}
+    ]
+  },
+  {
+    num: 9, name: "Rahu ja olemine", icon: "🌸",
+    desc: "Rahu ei ole pingutuse puudumine. See on kontakt iseendaga. Kunstiteraapia aitab selle kontakti luua.",
+    exercises: [
+      {title:"Vaikuse ruumikaart",mat:"Paber, sinised/rohelised värvid",steps:["Joonista ruum, kus tunneksid end täielikult rahulikult.","Lisa detaile: valgust, tekstuure, temperatuuri.","Kirjuta ühte nurka: mida sa selles ruumis tunned."],refl:"Mida saaksid teha, et oma igapäevaelu läheks sellele ruumile lähemale?"},
+      {title:"Hingamise värvistamine",mat:"Paber, sinised värvid",steps:["Hinga sisse 4 sekundit, hoia 4 sekundit, hinga välja 4 sekundit.","Korrake 3 korda.","Pärast igat tsüklit joonista, kuidas kehasse liigub rahu."],refl:"Kuidas muutus su tundmine pärast hingamist?"},
+      {title:"Looduse element",mat:"Paber, looduslikud värvid",steps:["Vali element, mis sind rahustab: vesi, tuli, maa, õhk.","Joonista see element.","Kirjuta, mida see element sulle annab."],refl:"Kuidas saad tuua selle elemendi rohkem oma ellu?"},
+      {title:"Sensoorne kaart",mat:"Paber, värvipliiatsid",steps:["Mõtle ühele rahuliku hetke.","Joonista 5 kastid: nägemine, kuulmine, haistmine, maitsemine, puudutamine.","Iga kasti juurde: mida siis kogesid?"],refl:"Millised meeled on kõige rohkem seotud sinu rahuga?"},
+      {title:"Moonutamata hetk",mat:"Paber, pliiats",steps:["Lase silmad kinni.","Kuula 2 minutit — ainult kuula, mis ümber on.","Joonista, mida kuulsid."],refl:"Mis märkasid, mida tavaliselt ei kuule?"},
+      {title:"Rahuvärvimine",mat:"Paber, värvipliiatsid",steps:["Joonista korduv muster (ringi, joonte, lainete).","Värvige see aeglaselt, ilma eesmärgita.","Lase protsessil olla meditatsioon."],refl:"Millised mõtted tulid ja läksid selle harjutuse ajal?"},
+      {title:"Tundides aeg",mat:"Paber, pliiats",steps:["Joonista kellakell.","Märgi igale tunnile midagi, mis sel ajal on hea.","Leia iga päeva jaoks ükski 'rahu hetk'."],refl:"Millises kellaajas tunned end kõige rohkem rahulikult?"},
+      {title:"Lihtsa ilu leidmine",mat:"Paber, värvipliiatsid",steps:["Mõtle millelegi väga lihtsale, mis täna oli ilus (päikesekiir, lapse naer, kohvi lõhn).","Joonista see hetk.","Värvige soe, helge."],refl:"Kui sageli märkad selliseid väikeseid ilusa hetki?"},
+      {title:"Kuu faasid",mat:"Paber, hall ja valge",steps:["Joonista kuu kõik neli faasi.","Iga faasi juurde kirjuta, milline tunne sul selle faasiga seostub.","Millisesse faasi oled praegu?"],refl:"Mida vajab praegune faas sinult?"},
+      {title:"Südame tänulikkus",mat:"Paber, värvipliiatsid",steps:["Joonista süda.","Täida see tänulikkusega: kirjuta, piirrjoonesta, värvige.","Kasutage sooje värve."],refl:"Kuidas tunneb su süda pärast seda harjutust?"}
+    ]
+  },
+  {
+    num: 10, name: "Kasv ja uuenemine", icon: "🌱",
+    desc: "Kasv on elus jätkuv protsess. Kunstiteraapia aitab muutust ja uuenemist toetada.",
+    exercises: [
+      {title:"Uue alustu seemne",mat:"Paber, roheline värv",steps:["Joonista seeme mullas.","Kirjuta seemnesse: millist uut algust soovid?","Joonista, kuidas see seen idaneb ja kasvab."],refl:"Mida vajab see seeme, et kasvada?"},
+      {title:"Metafoor kasvule",mat:"Paber, värvipliiatsid",steps:["Mõtle metafoor oma isiklikule kasvule (puu, mägi, laine, lind jne).","Joonista see metafoor.","Kirjuta: milles oled kasvanud viimase aasta jooksul?"],refl:"Millisele metafoorile mõtled, kui mõtled oma arengule?"},
+      {title:"Muutuste kollaaž",mat:"Ajakirjad, käärid, liim, paber",steps:["Loo kollaažis pilt muutusest, mida soovid enda elus näha.","Vali pildid ja sõnad, mis seda muutust kujutavad.","Pealkirjasta."],refl:"Mida peaksid hakkama tegema, et see pilt ellu viia?"},
+      {title:"Ebamugavustsoon",mat:"Paber, värvipliiatsid",steps:["Joonista kaks ringi üksteise sees.","Sisemine: su mugavustsoon.","Välimine: ebamugavustsoon.","Märgi serva peale midagi, mida tahaksid proovida väljaspool mugavustsooni."],refl:"Mida hoiab sind sellest asjast tegema?"},
+      {title:"Kivi kergemaks",mat:"Paber, rasked märgid",steps:["Joonista suur kivi.","Kirjuta kivisse kõik, mida kannad endaga (mured, kohustused, hirmud).","Nüüd joonista kivi kõrvale sama suured, kuid kerged suled.","Mis saab, kui need kivid muutuvad suledeks?"],refl:"Milline koorem on kõige raskem lahti lasta?"},
+      {title:"Kasvu kalender",mat:"Paber, pliiats",steps:["Joonista kalender järgmisele 30 päevale.","Märgi iga päeva juurde üks väike kasvu tegu.","Need ei pea olema suured — ainult pidevad."],refl:"Milline väike tegu teeb suurima muutuse?"},
+      {title:"Enesekaastunne joonises",mat:"Paber, pehmed värvid",steps:["Joonista oma käed, mis hoiavad midagi õrna.","Kirjuta, mida need käed hoiavad.","Kasutage pehmed, soojad värvid."],refl:"Kas sul on piisavalt enesekaastunnet? Mida vajad rohkem?"},
+      {title:"Teekonnakaart",mat:"Paber, värvipliiatsid",steps:["Joonista teekonnakaart: kust tulid, kus oled, kuhu lähed.","Märgi kõige olulisemad pöördepunktid.","Joonista täht, mis tähistab sinu praegust asukohta."],refl:"Mida oled teekonnal õppinud, mis on muutnud kõike?"},
+      {title:"Suured ja väiksed sammud",mat:"Paber, pliiats",steps:["Joonista redel.","Üleval: su suurim unistus.","Alumine pulk: kõige väiksem asi, mida saad täna teha.","Täida vahepeal olevad pulgad."],refl:"Mitmel pulgal oled juba?"},
+      {title:"Positiivsed sõnad südamesse",mat:"Paber, värvipliiatsid",steps:["Joonista süda.","Täida see ainult positiivsete sõnadega, mis sind iseloomustavad.","Värvige eredad, elavad värvid."],refl:"Kas need sõnad tunduvad tõesena? Mis on kõige raskem uskuda?"},
+      {title:"Elu kokkuvõte",mat:"Paber, pliiats",steps:["Kujuta ette, et vaatad oma elule tagasi 90-aastasena.","Joonista kaks momenti: üks, millest oled kõige rohkem uhke, üks, mida tahaksid korrata.","Kirjuta kõrvale ühesõnaline kirjeldus mõlemale."],refl:"Mida see harjutus muutis sinu prioriteetides?"}
+    ]
+  }
+];
+
+var exNum = 1;
+var container = document.getElementById('ex-container');
+
+THEMES.forEach(function(t) {
+  // Theme intro page
+  var introPage = document.createElement('div');
+  introPage.className = 'page theme-intro';
+  var bg = document.createElement('div');
+  bg.className = 'theme-intro-bg';
+  bg.style.background = 'linear-gradient(160deg, #D9C9F7 0%, #F3B8D2 50%, #FFF8F4 100%)';
+  introPage.appendChild(bg);
+  var numDiv = document.createElement('div');
+  numDiv.className = 'theme-intro-num';
+  numDiv.textContent = t.num;
+  introPage.appendChild(numDiv);
+  var inner = document.createElement('div');
+  inner.style.cssText = 'position:relative;z-index:1;max-width:140mm;';
+  inner.innerHTML = '<div class="theme-intro-badge">Teema ' + t.num + ' · ' + t.exercises.length + ' harjutust</div>' +
+    '<h2>' + t.icon + ' ' + t.name + '</h2>' +
+    '<p>' + t.desc + '</p>' +
+    '<div class="theme-intro-count">Harjutused ' + exNum + '–' + (exNum + t.exercises.length - 1) + '</div>';
+  introPage.appendChild(inner);
+  container.appendChild(introPage);
+
+  t.exercises.forEach(function(ex) {
+    var pg = document.createElement('div');
+    pg.className = 'page ex-page';
+    var stepsHtml = ex.steps.map(function(s, i) {
+      return '<div class="ex-step"><div class="ex-step-n">' + (i+1) + '</div><p>' + s + '</p></div>';
+    }).join('');
+    pg.innerHTML =
+      '<div class="ex-header"><span class="ex-topic">' + t.icon + ' ' + t.name + '</span><span class="ex-num">Harjutus ' + exNum + ' / 103</span></div>' +
+      '<div class="ex-title">' + ex.title + '</div>' +
+      '<div class="ex-materials"><span>Vajad:</span><span>' + ex.mat + '</span></div>' +
+      '<div class="ex-steps">' + stepsHtml + '</div>' +
+      '<div class="ex-space"></div>' +
+      '<div class="ex-reflection"><div class="ex-reflection-label">💭 Mõtisklus</div><p>' + ex.refl + '</p></div>';
+    container.appendChild(pg);
+    exNum++;
+  });
+});
+</script>
+</body>
+</html>
