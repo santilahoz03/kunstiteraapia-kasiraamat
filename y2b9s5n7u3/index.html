@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Boonus 3 — Impulsikaardid ärevusega toimetulekuks</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+@page { size:210mm 297mm; margin:0; }
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+:root { --lav:#D9C9F7;--lavd:#B89FE0;--pink:#F3B8D2;--title:#4E4036;--body:#6F6258;--body2:#8A7A70;--ft:'Playfair Display',serif;--fb:'Inter',sans-serif; }
+body { font-family:var(--fb); color:var(--body); background:#FFF8F4; }
+.page { width:210mm; min-height:297mm; position:relative; page-break-after:always; overflow:hidden; display:flex; flex-direction:column; }
+.cover { background:linear-gradient(160deg,#D9C9F7 0%,#F3B8D2 50%,#FFF8F4 100%); align-items:center; justify-content:center; text-align:center; padding:40mm 20mm; }
+.cover-badge { font-size:9pt; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--lavd); background:rgba(255,255,255,.65); padding:5px 18px; border-radius:20px; display:inline-block; margin-bottom:20px; }
+.cover h1 { font-family:var(--ft); font-size:26pt; color:var(--title); line-height:1.2; margin-bottom:12px; }
+.cover p { font-size:12pt; color:var(--body); margin-bottom:24px; line-height:1.5; }
+.cover-pill { display:inline-block; background:var(--title); color:#fff; padding:7px 20px; border-radius:24px; font-size:9pt; font-weight:600; margin:3px; }
+.guide-page { background:#fff; padding:18mm 18mm; }
+.guide-h2 { font-family:var(--ft); font-size:20pt; color:var(--title); margin-bottom:6mm; }
+.guide-p { font-size:10pt; color:var(--body); line-height:1.65; margin-bottom:3mm; }
+.guide-ul { list-style:none; display:flex; flex-direction:column; gap:3mm; margin:3mm 0; }
+.guide-ul li { font-size:10pt; color:var(--body); line-height:1.5; padding-left:14px; position:relative; }
+.guide-ul li::before { content:"✦"; position:absolute; left:0; color:var(--lavd); font-size:8pt; }
+.cards-page { background:#fff; padding:12mm 14mm; }
+.cards-grid { display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
+.card { background:linear-gradient(135deg,#f9f4ff,#fef3f8); border-radius:12px; padding:8mm 10mm; border:1.5px solid var(--lav); display:flex; flex-direction:column; gap:3mm; min-height:55mm; }
+.card-num { font-size:8pt; font-weight:700; letter-spacing:.1em; color:var(--lavd); text-transform:uppercase; }
+.card-q { font-family:var(--ft); font-size:11pt; color:var(--title); line-height:1.4; flex:1; }
+.card-refl { font-size:8.5pt; color:var(--body2); font-style:italic; line-height:1.5; padding-top:3mm; border-top:1px solid var(--lav); }
+@media print { .no-print { display:none!important; } }
+@media screen { body { background:#e0d8d0; padding:20px; } .page { margin:0 auto 20px; box-shadow:0 4px 20px rgba(0,0,0,.2); } .print-btn { position:fixed; bottom:24px; right:24px; background:var(--lavd); color:#fff; border:none; border-radius:50px; padding:14px 28px; font-size:14px; font-weight:700; cursor:pointer; z-index:1000; } }
+</style>
+</head>
+<body>
+<button class="print-btn no-print" onclick="window.print()">🖨️ Prindi / Salvesta PDF</button>
+<div class="page cover">
+  <div class="cover-badge">🃏 Boonus 3 · Kunstiteraapia Käsiraamat</div>
+  <h1>Impulsikaardid<br>ärevusega toimetulekuks</h1>
+  <p>50 küsimust suurema selguse, julguse ja ärevusega teadlikuma toimetuleku jaoks</p>
+  <div>
+    <span class="cover-pill">🃏 50 kaarti</span>
+    <span class="cover-pill">📖 Prinditav PDF</span>
+  </div>
+</div>
+<div class="page guide-page">
+  <h2 class="guide-h2">Kuidas kasutada impulsikaarte</h2>
+  <p class="guide-p">Impulsikaardid on küsimused ja impulsid, mis aitavad sul ärevusega teadlikult toime tulla. Need ei asenda terapeudi abi, kuid võivad aidata sul oma mõtteid ja tundeid paremini mõista.</p>
+  <p class="guide-h2" style="font-size:14pt;margin-top:5mm;">Kolm viisi kasutamiseks</p>
+  <ul class="guide-ul">
+    <li><strong>Juhuslik valimine:</strong> Sulge silmad, sõrm lehele — kasuta seda kaarti täna</li>
+    <li><strong>Teemapõhine:</strong> Vali kaart, mis vastab praegusele olukorrale</li>
+    <li><strong>Rühmatöö:</strong> Jagades igale kaardi, et alustada vestlust</li>
+  </ul>
+  <p class="guide-p" style="margin-top:4mm;">Iga kaart sisaldab: impulsi küsimust ja mõtiskluse suuna. Kasuta neid kirjutamiseks, joonistamiseks või lihtsalt mõtlemiseks.</p>
+</div>
+<div id="container"></div>
+<script>
+var cards = [
+  {q:"Mida märkad praegu oma kehas, kui ärevus tekib?",r:"Kust kehas tunned ärevust kõige rohkem?"},
+  {q:"Millist lugu räägid endale, mis tekitab ärevust?",r:"Kas see lugu on tõsi?"},
+  {q:"Mis juhtub kõige halvimal juhul? Kas sa suudaksid sellega toime tulla?",r:"Oled toime tulnud varem."},
+  {q:"Joonista ärevus kujundina. Mis värv, kuju, kaal see on?",r:"Kas see on suurem või väiksem, kui ootad?"},
+  {q:"Nimeta 5 asja, mida praegu näed. 4 asja, mida kuuled.",r:"Oled siin, praegu, turvaliselt."},
+  {q:"Mis on üks asi, mida saad kontrollida praegu?",r:"Fookus kontrolli all olevale on rahustav."},
+  {q:"Kellele saaksid praegu helistada või kirjutada?",r:"Sa ei pea selle ärevusega üksi olema."},
+  {q:"Mis on see, millest ärevus tegelikult räägib? Mida see kaitseb?",r:"Ärevus on tihti kaitsja, mitte vaenlane."},
+  {q:"Joonista turvaline koht. Kujuta ennast sinna.",r:"Kuidas tunneb su keha, kui oled seal?"},
+  {q:"Milline osa sinust teab, et kõik saab korda?",r:"See osa on sinus alati olemas."},
+  {q:"Mis juhtus viimati, kui olid nii ärev? Kuidas see lõppes?",r:"Sa oled üle elanud kõik oma raskemad hetked."},
+  {q:"Kirjuta üles kõik, mis sind praegu muretsema paneb. Lihtsalt välja.",r:"Välja kirjutamine vähendab mõju."},
+  {q:"Hingake sügavalt sisse — mida see hingetõmme sulle annab?",r:"Su keha teab, kuidas rahuneda."},
+  {q:"Mis tunne oli sul, enne kui ärevus tuli? Mida vajab see tunne?",r:"Ärevus katab tihti teist tunnet."},
+  {q:"Kes on see inimene, keda sa jälgid ja kes tundub alati rahulik? Mida ta teeb?",r:"Mida saaksid neilt õppida?"},
+  {q:"Joonista ärevus loomana. Mis loom on see? Mida ta vajab?",r:"Ärevus vajab tihti armastust, mitte võitlust."},
+  {q:"Milline on su ärevuse tase 1-10? Mis viis sinna?",r:"Teadlikkus on esimene samm."},
+  {q:"Kas ärevus on seotud mineviku sündmusega? Millega?",r:"Minevik ei ole oleviku oht."},
+  {q:"Mis oleks parim, mis saaks juhtuda, mitte halvim?",r:"Mõistus valib sageli auto-matikalt halvimat."},
+  {q:"Nimeta 3 asja, mis on sinu elus hästi praegu.",r:"Hea on olemas, ka siis kui ärevus on suur."},
+  {q:"Joonista sein ärevuse ja rahuliku mina vahel. Kuidas läbi saada?",r:"Su rahulik mina on alati seal."},
+  {q:"Mida vajab su 8-aastane mina praegu?",r:"Lapse hoolitsus on põhivajadus."},
+  {q:"Kas ärevus on seotud teise inimesega? Mida tahaksid neile öelda?",r:"Öelda ei pea — ainult tunda."},
+  {q:"Millist väljakutset ärevus sulle tegelikult annab?",r:"Raskused on ka kasvu koht."},
+  {q:"Joonista ärevuse energia — mis kujul on see energia?",r:"Energia muutub, aga ei kao."},
+  {q:"Kas seal on midagi, mida pead tegema, kuid pole teinud? Üks samm?",r:"Tegevus vähendab ärevust."},
+  {q:"Milline on su tugiisikute ring? Kas sa kasutad neid piisavalt?",r:"Tugisüsteem on jõud, mitte nõrkus."},
+  {q:"Mis teeksid praegu, kui ärevust ei oleks?",r:"Kas saad teha seda ka ärevusega?"},
+  {q:"Kirjuta tänukiri oma ärevusele — mida ta on sinust kaitsnud?",r:"Aitäh, nüüd saan ise hoolitseda."},
+  {q:"Joonista rahutunne. Mida näed, kuuled, tunned?",r:"Su keha teab, kuidas rahu tunda."},
+  {q:"Millist tegevust tehes unustad ärevuse?",r:"See tegevus on su ankur."},
+  {q:"Kas ärevus on seotud ebareaalsete ootustega iseendale?",r:"Oled juba piisav."},
+  {q:"Joonista sild ärevusest rahuni. Mis on sillal?",r:"Iga samm on edusamm."},
+  {q:"Mida ütleksid oma parimale sõbrale, kes on praegu sama ärev?",r:"Räägi endale samamoodi."},
+  {q:"Kas ärevus räägib tulevikust? Mida tegelikult vajad praegu?",r:"Praegune hetk on ainus, kus saad olla."},
+  {q:"Milline on su keha sõnum praegu? Kuula seda.",r:"Keha on tark."},
+  {q:"Joonista turvaline käte haaramine. Kas sa tunned kaitset?",r:"Enese hoidmine on enese armastus."},
+  {q:"Mis on üks asi, mis kindlasti on homme hea?",r:"Lootus on ankur."},
+  {q:"Kas sul on harjutus, mis on varem ärevust rahustanud? Kasuta seda.",r:"Sa tead juba, mis töötab."},
+  {q:"Joonista ärevus kui torm. Kuidas näeb välja torm enne ja pärast?",r:"Tormid lõpevad alati."},
+  {q:"Milline loom sümboliseerib su sisemist rahu? Kutsu see loom appi.",r:"Su sisemine rahu on alati ligipääsetav."},
+  {q:"Mida vajab su keha praegu? Vesi, puhkus, liikumine, puudutus?",r:"Keha vajadused on põhivajadused."},
+  {q:"Joonista ärevuse suurus vs. oma tugevuse suurus.",r:"Sa oled suurem kui ärevus."},
+  {q:"Mis on üks asi, mida oled varem hästi teinud ärevuse ajal?",r:"Sa suudad uuesti."},
+  {q:"Kas ärevus on seotud kellegagi võrdlemisega? Kas see on aus?",r:"Võrdlus ei ole tõde."},
+  {q:"Joonista oma süda. Mis on sees? Mis teda hoiab?",r:"Su süda on tugev."},
+  {q:"Milline värv oleks, kui ärevus muutuks rahulikkuseks?",r:"Joonista see muutumine."},
+  {q:"Mida tahaksid praegu öelda, kuid pole öelnud?",r:"Kirjuta see siin välja — ainult sinuks."},
+  {q:"Joonista uks, mille taga on rahu. Mis selle avab?",r:"Võti on sinus."},
+  {q:"Mis on üks asi, mida tead kindlalt: ma suudan seda?",r:"Kasuta seda teadmist praegu."}
+];
+var c = document.getElementById('container');
+for (var i = 0; i < cards.length; i += 4) {
+  var pg = document.createElement('div');
+  pg.className = 'page cards-page';
+  var grid = document.createElement('div');
+  grid.className = 'cards-grid';
+  for (var j = i; j < Math.min(i+4, cards.length); j++) {
+    var card = cards[j];
+    var cardEl = document.createElement('div');
+    cardEl.className = 'card';
+    cardEl.innerHTML = '<div class="card-num">Kaart ' + (j+1) + ' / ' + cards.length + '</div>' +
+      '<div class="card-q">' + card.q + '</div>' +
+      '<div class="card-refl">💭 ' + card.r + '</div>';
+    grid.appendChild(cardEl);
+  }
+  pg.appendChild(grid);
+  c.appendChild(pg);
+}
+</script>
+</body>
+</html>
